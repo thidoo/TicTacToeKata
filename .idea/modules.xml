@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.thidoo.iml" filepath="$PROJECT_DIR$/.idea/modules/com.thidoo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.thidoo_main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.thidoo_main.iml" group="com.thidoo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.thidoo_test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.thidoo_test.iml" group="com.thidoo" />
+    </modules>
+  </component>
+</project>
