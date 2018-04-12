@@ -1,20 +1,22 @@
-import GameComponent.Board.GameBoard2D;
-import GameComponent.Console.ConsoleReader;
-import GameComponent.Coordinate.Coordinate2DService;
-import GameComponent.Game;
-import GameService.GameStatusChecker;
-import GameService.InputValidator;
-import GameComponent.Player;
+import Game.Model.Board.GameBoard2D;
+import Game.Model.Console.ConsolePrinter;
+import Game.Model.Console.ConsoleReader;
+import Game.Service.Coordinate.Coordinate2DConverter;
+import Game.Service.Game;
+import Game.Service.GameStateDecider;
+import Game.Service.InputValidator;
+import Game.Model.Player;
 
 public class GameDriver {
 
     public static void main(String[] args){
-        Coordinate2DService coordinateService = new Coordinate2DService();
+        Coordinate2DConverter coordinateConverter = new Coordinate2DConverter();
 
         Game game = new Game(new ConsoleReader(),
-                                new InputValidator(coordinateService),
-                                new GameStatusChecker(),
-                                coordinateService);
+                                new ConsolePrinter(),
+                                new InputValidator(coordinateConverter),
+                                new GameStateDecider(),
+                                coordinateConverter);
 
         game.init(new Player("X"), new Player("O"), new GameBoard2D(3));
         game.run();

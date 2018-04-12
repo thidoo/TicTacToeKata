@@ -1,11 +1,12 @@
-import GameComponent.Board.GameBoard;
-import GameComponent.Board.GameBoard2D;
-import GameComponent.Console.ConsoleReader;
-import GameComponent.Coordinate.Coordinate2DService;
-import GameComponent.Game;
-import GameComponent.Player;
-import GameService.GameStatusChecker;
-import GameService.InputValidator;
+import Game.Model.Board.GameBoard;
+import Game.Model.Board.GameBoard2D;
+import Game.Model.Console.ConsolePrinter;
+import Game.Model.Console.ConsoleReader;
+import Game.Service.Coordinate.Coordinate2DConverter;
+import Game.Service.Game;
+import Game.Model.Player;
+import Game.Service.GameStateDecider;
+import Game.Service.InputValidator;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -25,29 +26,18 @@ public class GameTest {
 
     @Before
     public void setUpGame_With2DBoard_And2Players(){
-        game = new Game(new ConsoleReader(), new InputValidator(new Coordinate2DService()),
-                        new GameStatusChecker(), new Coordinate2DService());
+        game = new Game(new ConsoleReader(),
+                        new ConsolePrinter(),
+                        new InputValidator(new Coordinate2DConverter()),
+                        new GameStateDecider(),
+                        new Coordinate2DConverter());
 
         player1 = new Player("X");
         player2 = new Player("O");
         board = new GameBoard2D(3);
 
         game.init(player1, player2, board);
-    }
-
-    @Test
-    public void gamePrintsWelcomeMessage_AndEmptyBoard_WhenFirstStarts(){
-        final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outContent));
-
         game.run();
-
-        String expectedGameStartString = ("Welcome to Tic Tac Toe!\n\n" +
-                                            "Here's the current board:\n\n" +
-                                            ". . . \n. . . \n. . . \n\n");
-        assertThat(outContent.toString(), equalTo(expectedGameStartString));
-
-        System.setOut(System.out);
     }
 
     @Test
