@@ -8,9 +8,7 @@ import Game.Model.State.NotFinished;
 import Game.Service.Coordinate.Coordinate2DConverter;
 import Game.Service.Coordinate.CoordinateConverter;
 import Game.Model.Player;
-import Game.Model.State.Draw;
-import Game.Model.State.Status;
-import Game.Model.State.Win;
+import Game.Model.State.GameState;
 import Game.Model.ValidatorResult.Exit;
 import Game.Model.ValidatorResult.InputValidatorResult;
 import Game.Model.ValidatorResult.ValidMove;
@@ -73,7 +71,7 @@ public class Game {
             Coordinate coordinate = coordinate2DService.convertToCoordinate(input);
 
             move(validatorOutcome, coordinate);
-            determineGameStatus(coordinate);
+            determineGameState(coordinate);
         } else {
             isRunning = !(validatorOutcome instanceof Exit);
             System.out.println(validatorOutcome.getMessage());
@@ -85,14 +83,14 @@ public class Game {
         consolePrinter.showUpdate(validatorOutcome, board);
     }
 
-    private void determineGameStatus(Coordinate coordinate) {
-        Status gameStatus = gameStateDecider.check(board, coordinate, this.currentPlayer);
+    private void determineGameState(Coordinate coordinate) {
+        GameState state = gameStateDecider.check(board, coordinate, this.currentPlayer);
 
-        if (gameStatus instanceof NotFinished){
+        if (state instanceof NotFinished){
             switchPlayer();
         }
         else {
-            System.out.println(gameStatus.getMessage());
+            System.out.println(state.getMessage());
             isRunning = false;
         }
     }
