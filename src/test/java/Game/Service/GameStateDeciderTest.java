@@ -5,7 +5,7 @@ import Game.Model.Board.GameBoard2D;
 import Game.Model.Coordinate.Coordinate2D;
 import Game.Model.Player;
 import Game.Model.State.NotFinished;
-import Game.Model.State.Status;
+import Game.Model.State.GameState;
 import Game.Model.State.Win;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,8 +27,8 @@ public class GameStateDeciderTest {
         GameBoard board = new GameBoard2D(3);
         ((GameBoard2D) board).getBoardContent()[1][1].setToken("X");
 
-        Status gameStatus = gameStateDecider.check(board, new Coordinate2D(1,1), new Player("X"));
-        boolean expectedResult = gameStatus instanceof NotFinished;
+        GameState gameGameState = gameStateDecider.check(board, new Coordinate2D(1,1), new Player("X"));
+        boolean expectedResult = gameGameState instanceof NotFinished;
 
         assertThat(expectedResult, equalTo(true));
     }
@@ -38,8 +38,8 @@ public class GameStateDeciderTest {
         GameBoard winBoard = createWinBoard_HorizontalLineFilled();
         winBoard.printBoard();
 
-        Status gameStatus = gameStateDecider.check(winBoard, new Coordinate2D(0,2), new Player("X"));
-        boolean expectedResult = gameStatus instanceof Win;
+        GameState gameGameState = gameStateDecider.check(winBoard, new Coordinate2D(0,2), new Player("X"));
+        boolean expectedResult = gameGameState instanceof Win;
 
         assertThat(expectedResult, equalTo(true));
     }
@@ -49,8 +49,8 @@ public class GameStateDeciderTest {
         GameBoard winBoard = createWinBoard_VerticalLineFilled();
         winBoard.printBoard();
 
-        Status gameStatus = gameStateDecider.check(winBoard, new Coordinate2D(1,0), new Player("X"));
-        boolean expectedResult = gameStatus instanceof Win;
+        GameState gameGameState = gameStateDecider.check(winBoard, new Coordinate2D(1,0), new Player("X"));
+        boolean expectedResult = gameGameState instanceof Win;
 
         assertThat(expectedResult, equalTo(true));
     }
@@ -60,8 +60,8 @@ public class GameStateDeciderTest {
         GameBoard winBoard = createWinBoard_DiagonalLineFilled_NegativeSlope();
         winBoard.printBoard();
 
-        Status gameStatus = gameStateDecider.check(winBoard, new Coordinate2D(1,1), new Player("X"));
-        boolean expectedResult = gameStatus instanceof Win;
+        GameState gameGameState = gameStateDecider.check(winBoard, new Coordinate2D(1,1), new Player("X"));
+        boolean expectedResult = gameGameState instanceof Win;
 
         assertThat(expectedResult, equalTo(true));
     }
@@ -71,8 +71,8 @@ public class GameStateDeciderTest {
         GameBoard winBoard = createWinBoard_DiagonalLineFilled_PositiveSlope();
         winBoard.printBoard();
 
-        Status gameStatus = gameStateDecider.check(winBoard, new Coordinate2D(1,1), new Player("X"));
-        boolean expectedResult = gameStatus instanceof Win;
+        GameState gameGameState = gameStateDecider.check(winBoard, new Coordinate2D(1,1), new Player("X"));
+        boolean expectedResult = gameGameState instanceof Win;
 
         assertThat(expectedResult, equalTo(true));
     }

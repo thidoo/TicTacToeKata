@@ -2,7 +2,7 @@ package Game.Model.State;
 
 import Game.Model.Player;
 
-public class Win implements Status {
+public class Win implements GameState {
 
     private Player winner;
 

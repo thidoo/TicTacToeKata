@@ -5,12 +5,12 @@ import Game.Model.Coordinate.Coordinate;
 import Game.Model.Player;
 import Game.Model.State.Draw;
 import Game.Model.State.NotFinished;
-import Game.Model.State.Status;
+import Game.Model.State.GameState;
 import Game.Model.State.Win;
 
 public class GameStateDecider {
 
-    public Status check(GameBoard gameBoard, Coordinate coordinate, Player currentPlayer){
+    public GameState check(GameBoard gameBoard, Coordinate coordinate, Player currentPlayer){
 
         if (gameBoard.hasFilledLine(coordinate)){
             return new Win(currentPlayer);

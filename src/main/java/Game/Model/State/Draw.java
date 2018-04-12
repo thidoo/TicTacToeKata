@@ -1,6 +1,6 @@
 package Game.Model.State;
 
-public class Draw implements Status {
+public class Draw implements GameState {
 
     @Override
     public String getMessage() {

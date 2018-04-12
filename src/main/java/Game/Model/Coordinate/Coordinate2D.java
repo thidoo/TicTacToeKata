@@ -21,16 +21,6 @@ public class Coordinate2D implements Coordinate {
     }
 
     @Override
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    @Override
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Coordinate2D)) return false;
