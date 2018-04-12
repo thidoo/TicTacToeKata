@@ -2,6 +2,7 @@ package Game.Service;
 
 import Game.Model.Board.GameBoard;
 import Game.Model.Coordinate.Coordinate;
+import Game.Model.InputValidatorOutcome;
 import Game.Service.Coordinate.Coordinate2DConverter;
 import Game.Model.ValidatorResult.Exit;
 import Game.Model.ValidatorResult.InputValidatorResult;
@@ -20,34 +21,34 @@ public class InputValidator {
         this.coordinate2DConverter = coordinate2DConverter;
     }
 
-    public InputValidatorResult validate(GameBoard gameBoard, String input){
+    public InputValidatorOutcome validate(GameBoard gameBoard, String input){
         if (input.equals(QUIT_KEY)){
-            return new Exit();
+            return InputValidatorOutcome.EXIT;
         }
         else {
             return determineRunningOutcome(gameBoard, input);
         }
     }
 
-    private InputValidatorResult determineRunningOutcome(GameBoard gameBoard, String input){
+    private InputValidatorOutcome determineRunningOutcome(GameBoard gameBoard, String input){
 
         if (coordinate2DConverter.isCorrectFormat(input)){
             Coordinate coordinate = coordinate2DConverter.convertToCoordinate(input);
 
             if (!gameBoard.contains(coordinate)){
-                return new MoveOutOfBound();
+                return InputValidatorOutcome.MOVE_OUT_OF_BOUND;
             }
             else {
                 if (gameBoard.isEmptyAtPosition(coordinate)){
-                    return new ValidMove();
+                    return InputValidatorOutcome.VALID_MOVE;
                 }
                 else {
-                    return new OccupiedCell();
+                    return InputValidatorOutcome.OCCUPIED_CELL;
                 }
             }
         }
         else{
-            return new InvalidCoordinateFormat();
+            return InputValidatorOutcome.INVALID_COORD_FORMAT;
         }
     }
 }

@@ -4,6 +4,7 @@ import Game.Model.Board.GameBoard;
 import Game.Model.Console.ConsolePrinter;
 import Game.Model.Console.ConsoleReader;
 import Game.Model.Coordinate.Coordinate;
+import Game.Model.InputValidatorOutcome;
 import Game.Model.State.NotFinished;
 import Game.Service.Coordinate.Coordinate2DConverter;
 import Game.Service.Coordinate.CoordinateConverter;
@@ -65,20 +66,20 @@ public class Game {
     }
 
     private void respondToInput(String input) {
-        InputValidatorResult validatorOutcome = inputValidator.validate(board, input);
+        InputValidatorOutcome validatorOutcome = inputValidator.validate(board, input);
 
-        if (validatorOutcome instanceof ValidMove) {
+        if (validatorOutcome == InputValidatorOutcome.VALID_MOVE) {
             Coordinate coordinate = coordinate2DService.convertToCoordinate(input);
 
             move(validatorOutcome, coordinate);
             determineGameState(coordinate);
         } else {
-            isRunning = !(validatorOutcome instanceof Exit);
-            System.out.println(validatorOutcome.getMessage());
+            isRunning = !(validatorOutcome == InputValidatorOutcome.EXIT);
+            System.out.println(validatorOutcome.message());
         }
     }
 
-    private void move(InputValidatorResult validatorOutcome, Coordinate coordinate){
+    private void move(InputValidatorOutcome validatorOutcome, Coordinate coordinate){
         board.updateCell(this.currentPlayer.getToken(), coordinate);
         consolePrinter.showUpdate(validatorOutcome, board);
     }

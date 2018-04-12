@@ -1,8 +1,8 @@
 package Game.Model.Console;
 
 import Game.Model.Board.GameBoard;
+import Game.Model.InputValidatorOutcome;
 import Game.Model.Player;
-import Game.Model.ValidatorResult.InputValidatorResult;
 
 public class ConsolePrinter {
 
@@ -17,8 +17,8 @@ public class ConsolePrinter {
                 player.getPlayerOrder(), player.getToken());
     }
 
-    public void showUpdate(InputValidatorResult validatorOutcome, GameBoard board) {
-        System.out.println(validatorOutcome.getMessage());
+    public void showUpdate(InputValidatorOutcome validatorOutcome, GameBoard board) {
+        System.out.println(validatorOutcome.message());
         board.printBoard();
     }
 }
