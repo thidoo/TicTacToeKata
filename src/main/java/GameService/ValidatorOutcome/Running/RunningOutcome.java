@@ -2,15 +2,9 @@ package GameService.ValidatorOutcome.Running;
 
 import GameService.ValidatorOutcome.InputValidatorOutcome;
 
-public class RunningOutcome implements InputValidatorOutcome {
+public abstract class RunningOutcome implements InputValidatorOutcome {
 
     @Override
-    public String getMessage() {
-        return null;
-    }
+    public abstract String getMessage();
 
-    @Override
-    public Boolean isSuccessful() {
-        return null;
-    }
 }

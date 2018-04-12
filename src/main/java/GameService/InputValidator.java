@@ -12,6 +12,7 @@ import GameService.ValidatorOutcome.Running.OccupiedCell;
 import GameService.ValidatorOutcome.Running.ValidMove;
 
 public class InputValidator {
+
     private static final String QUIT_KEY = "q";
 
     private Coordinate2DService coordinate2DService;

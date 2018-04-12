@@ -6,9 +6,4 @@ public class Exit implements InputValidatorOutcome {
     public String getMessage() {
         return "\nGame exiting...";
     }
-
-    @Override
-    public Boolean isSuccessful() {
-        return false;
-    }
 }
