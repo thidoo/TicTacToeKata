@@ -33,8 +33,11 @@ public class InputProcessor {
         if (inputValidatorResult == InputValidatorResult.VALID_MOVE) {
             return computeValidMoveOutput(playerInput, inGame, inputValidatorResult);
         }
+        else if (inputValidatorResult == InputValidatorResult.EXIT){
+            inGame.setIsPlaying(false);
+            //processPostExit();
+        }
 
-        inGame.setIsPlaying(!(inputValidatorResult == InputValidatorResult.EXIT));
         return new Pair<>(inputValidatorResult.message(), inGame);
     }
 
@@ -57,6 +60,7 @@ public class InputProcessor {
         else {
             outMessage = inputValidatorResult.message() + "\n" + game.getBoard().toString() + "\n" + state.getMessage();
             game.setIsPlaying(false);
+            game.setIsFinished(true);
         }
 
         return new Pair<>(outMessage, game);

@@ -1,7 +1,6 @@
 package Game.Model;
 
 import Game.Model.Board.GameBoard;
-import Game.Model.Board.GameBoard2D;
 
 import java.util.Objects;
 
@@ -11,7 +10,8 @@ public class TicTacToe {
     private Player player2;
     private GameBoard gameBoard;
 
-    private boolean isPlaying;
+    private boolean playing;
+    private boolean finished;
     private Player currentPlayer;
 
     public TicTacToe(Player player1, Player player2, GameBoard gameBoard) {
@@ -30,23 +30,19 @@ public class TicTacToe {
         }
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof TicTacToe)) return false;
-        TicTacToe that = (TicTacToe) o;
-        return Objects.equals(player1, that.player1) &&
-                Objects.equals(player2, that.player2) &&
-                Objects.equals(gameBoard, that.gameBoard);
-    }
-
     public void setIsPlaying(boolean isPlaying) {
-        this.isPlaying = isPlaying;
+        this.playing = isPlaying;
     }
 
     public boolean isPlaying() {
-        return isPlaying;
+        return playing;
     }
+
+    public void setIsFinished(boolean isFinished) {
+        this.finished = isFinished;
+    }
+
+    public boolean isFinished() { return finished; }
 
     public GameBoard getBoard() {
         return this.gameBoard;
@@ -55,4 +51,6 @@ public class TicTacToe {
     public Player getCurrentPlayer() {
         return this.currentPlayer;
     }
+
+
 }

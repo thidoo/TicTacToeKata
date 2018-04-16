@@ -1,6 +1,5 @@
 package Game.Service;
 
-import Game.GameEngine;
 import Game.Model.TicTacToe;
 
 public class GameLooper {
@@ -9,10 +8,12 @@ public class GameLooper {
 
     private Configurator configurator;
     private GameEngine gameEngine;
+    private PostExitProcessor postExitProcessor;
 
-    public GameLooper(Configurator configurator, GameEngine gameEngine) {
+    public GameLooper(Configurator configurator, GameEngine gameEngine, PostExitProcessor postExitProcessor) {
         this.configurator = configurator;
         this.gameEngine = gameEngine;
+        this.postExitProcessor = postExitProcessor;
 
         this.isLoop = true;
     }
@@ -20,17 +21,26 @@ public class GameLooper {
     public void loop(){
         while (isLoop){
             isLoop = false;
-            TicTacToe ticTacToe = configurator.configure();
-            gameEngine.run(ticTacToe);
+            TicTacToe inTicTacToe = configurator.configure();
+            TicTacToe exitTicTacToe = gameEngine.run(inTicTacToe);
+            processPostGame(exitTicTacToe);
+        }
+    }
+
+    private void processPostGame(TicTacToe ticTacToe){
+        if (!ticTacToe.isFinished()){
+            postExitProcessor.process(ticTacToe);
+        }
+        else {
             processLoopingRequest();
         }
     }
 
     private void processLoopingRequest(){
         gameEngine.getConsoleWriter().write("Would you like to play another game?[Y/N]");
-        boolean validInput = false;
         String response = gameEngine.getInputReader().read().trim();
 
+        boolean validInput = false;
         while (!validInput){
             if (response.equals("Y") || response.equals("y")){
                 this.isLoop = true;

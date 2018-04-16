@@ -1,4 +1,4 @@
-import Game.GameEngine;
+import Game.Service.GameEngine;
 import Game.Service.IO.ConsoleWriter;
 import Game.Service.IO.InputReader;
 import Game.Service.*;
@@ -16,11 +16,13 @@ public class GameDriver {
         StateDecider stateDecider = new StateDecider();
 
         InputProcessor inputProcessor = new InputProcessor(inputValidator, stateDecider, coordinate2DConverter);
-        Configurator configurator = new Configurator(inputReader, consoleWriter);
-        GameEngine gameEngine = new GameEngine(inputReader, consoleWriter, inputProcessor);
-        GameLooper gameLooper = new GameLooper(configurator, gameEngine);
+        PostExitProcessor postExitProcessor = new PostExitProcessor(inputReader, consoleWriter);
 
-        // Configure and run the game
+        GameEngine gameEngine = new GameEngine(inputReader, consoleWriter, inputProcessor);
+
+        Configurator configurator = new Configurator(inputReader, consoleWriter);
+
+        GameLooper gameLooper = new GameLooper(configurator, gameEngine, postExitProcessor);
         gameLooper.loop();
     }
 }
