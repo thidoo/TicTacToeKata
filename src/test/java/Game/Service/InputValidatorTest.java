@@ -2,12 +2,8 @@ package Game.Service;
 
 import Game.Model.Board.GameBoard;
 import Game.Model.Board.GameBoard2D;
+import Game.Model.InputValidatorResult;
 import Game.Service.Coordinate.Coordinate2DConverter;
-import Game.Model.ValidatorResult.Exit;
-import Game.Model.ValidatorResult.InputValidatorResult;
-import Game.Model.ValidatorResult.InvalidCoordinateFormat;
-import Game.Model.ValidatorResult.MoveOutOfBound;
-import Game.Model.ValidatorResult.ValidMove;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -27,29 +23,26 @@ public class InputValidatorTest {
 
     @Test
     public void qShouldReturnExitResult() {
-        InputValidatorResult inputValidatorResult = inputValidator.validate(gameBoard, "q");
-        boolean expectedMatch = inputValidatorResult instanceof Exit;
-        assertThat(expectedMatch, equalTo(true));
+        InputValidatorResult inputValidatorResult = inputValidator.validate(gameBoard, "q");;
+        assertThat(inputValidatorResult, equalTo(InputValidatorResult.EXIT));
     }
 
     @Test
     public void validMove_ShouldReturn_ValidMoveSuccess() {
         InputValidatorResult inputValidatorResult = inputValidator.validate(gameBoard, "2,2");
-        boolean expectedMatch = inputValidatorResult instanceof ValidMove;
-        assertThat(expectedMatch, equalTo(true));
+        assertThat(inputValidatorResult, equalTo(InputValidatorResult.VALID_MOVE));
+
     }
 
     @Test
     public void invalidMove_ShouldReturn_InvalidMoveSuccess() {
         InputValidatorResult inputValidatorResult = inputValidator.validate(gameBoard, "4,4");
-        boolean expectedMatch = inputValidatorResult instanceof MoveOutOfBound;
-        assertThat(expectedMatch, equalTo(true));
+        assertThat(inputValidatorResult, equalTo(InputValidatorResult.MOVE_OUT_OF_BOUND));
     }
 
     @Test
     public void invalidCoordinateFormat_ShouldReturn_InvalidCoordinateFormatSuccess() {
         InputValidatorResult inputValidatorResult = inputValidator.validate(gameBoard, "44");
-        boolean expectedMatch = inputValidatorResult instanceof InvalidCoordinateFormat;
-        assertThat(expectedMatch, equalTo(true));
+        assertThat(inputValidatorResult, equalTo(InputValidatorResult.INVALID_COORD_FORMAT));
     }
 }

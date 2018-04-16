@@ -15,4 +15,6 @@ public interface GameBoard {
     boolean contains(Coordinate coordinate);
 
     boolean hasFilledLine(Coordinate coordinate);
+
+    boolean equals(Object o);
 }

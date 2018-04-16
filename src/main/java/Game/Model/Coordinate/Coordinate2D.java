@@ -1,5 +1,7 @@
 package Game.Model.Coordinate;
 
+import java.util.Objects;
+
 public class Coordinate2D implements Coordinate {
 
     private int x;

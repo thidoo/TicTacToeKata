@@ -5,5 +5,5 @@ import Game.Model.Coordinate.Coordinate;
 public interface CoordinateConverter {
 
     boolean isCorrectFormat(String input);
-    Coordinate convertToCoordinate(String input);
+    Coordinate convert(String input);
 }

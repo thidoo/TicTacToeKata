@@ -25,10 +25,10 @@ public class Coordinate2DConverterTest {
 
     @Test
     public void convertToCoordinate2D() {
-        Coordinate2D actualCoordinate1 = (Coordinate2D) coordinate2DConverter.convertToCoordinate("1,2");
+        Coordinate2D actualCoordinate1 = (Coordinate2D) coordinate2DConverter.convert("1,2");
         assertThat(actualCoordinate1,equalTo(new Coordinate2D(0,1)));
 
-        Coordinate2D actualCoordinate2 = (Coordinate2D) coordinate2DConverter.convertToCoordinate("11,2");
+        Coordinate2D actualCoordinate2 = (Coordinate2D) coordinate2DConverter.convert("11,2");
         assertThat(actualCoordinate2,equalTo(new Coordinate2D(10,1)));
     }
 }

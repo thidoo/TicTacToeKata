@@ -1,24 +1,27 @@
-import Game.Model.Board.GameBoard2D;
-import Game.Model.Console.ConsolePrinter;
-import Game.Model.Console.ConsoleReader;
+import Game.Model.IO.ConsoleWriter;
+import Game.Model.IO.InputReader;
+import Game.Model.TicTacToe;
+import Game.Service.*;
 import Game.Service.Coordinate.Coordinate2DConverter;
-import Game.Service.Game;
-import Game.Service.GameStateDecider;
-import Game.Service.InputValidator;
-import Game.Model.Player;
 
 public class GameDriver {
 
     public static void main(String[] args){
-        Coordinate2DConverter coordinateConverter = new Coordinate2DConverter();
 
-        Game game = new Game(new ConsoleReader(),
-                                new ConsolePrinter(),
-                                new InputValidator(coordinateConverter),
-                                new GameStateDecider(),
-                                coordinateConverter);
+        InputReader inputReader = new InputReader();
+        ConsoleWriter consoleWriter = new ConsoleWriter();
 
-        game.init(new Player("X"), new Player("O"), new GameBoard2D(3));
-        game.run();
+        Coordinate2DConverter coordinate2DConverter = new Coordinate2DConverter();
+        InputValidator inputValidator = new InputValidator(coordinate2DConverter);
+        StateDecider stateDecider = new StateDecider();
+
+        InputProcessor inputProcessor = new InputProcessor(inputValidator, stateDecider, coordinate2DConverter);
+        Configurator configurator = new Configurator(inputReader, consoleWriter);
+
+        GameEngine gameEngine = new GameEngine(inputReader, consoleWriter, inputProcessor);
+
+        // Configure and run the game
+        TicTacToe ticTacToe = configurator.configure();
+        gameEngine.run(ticTacToe);
     }
 }
