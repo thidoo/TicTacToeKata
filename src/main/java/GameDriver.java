@@ -1,3 +1,4 @@
+import Game.Service.GameLooper;
 import Game.Service.GameEngine;
 import Game.Service.IO.ConsoleWriter;
 import Game.Service.IO.InputReader;
