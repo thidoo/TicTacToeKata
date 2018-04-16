@@ -485,8 +485,8 @@
     </option>
     <option name="projectSyncType">
       <map>
-        <entry key="$USER_HOME$/Documents/CODE/Git/Protege-Coding-Challenge" value="PREVIEW" />
-        <entry key="$USER_HOME$/Documents/CODE/Git/intro-to-tdd" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../CODE/Git/Protege-Coding-Challenge" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../CODE/Git/intro-to-tdd" value="PREVIEW" />
         <entry key="$USER_HOME$/Downloads/liveaccounts-master" value="PREVIEW" />
         <entry key="$USER_HOME$/Downloads/spring-test-demo-master" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../Protege-Coding-Challenge" value="PREVIEW" />
@@ -561,8 +561,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="1366" />
+    <option name="y" value="-37" />
     <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="height" value="1117" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
