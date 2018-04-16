@@ -2,13 +2,11 @@ package Game.Service;
 
 import Game.Model.Coordinate.Coordinate;
 import Game.Model.InputValidatorResult;
-import Game.Model.TicTacToe;
-import Game.Model.TupleStructure.Pair;
 import Game.Model.State.GameState;
 import Game.Model.State.NotFinished;
+import Game.Model.TicTacToe;
+import Game.Model.TupleStructure.Pair;
 import Game.Service.Coordinate.CoordinateConverter;
-
-import java.util.StringJoiner;
 
 public class InputProcessor {
 

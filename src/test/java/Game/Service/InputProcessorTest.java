@@ -106,7 +106,7 @@ public class InputProcessorTest {
         String outMessage = (String) processorOutput.getLeft();
         TicTacToe outTicTacToe = (TicTacToe) processorOutput.getRight();
 
-        assertThat(outMessage, equalTo(InputValidatorResult.VALID_MOVE.message() + ". X . \n. . . \n. . . \n"));
+        assertThat(outMessage, equalTo(InputValidatorResult.VALID_MOVE.message() + "\n" + ". X . \n. . . \n. . . \n"));
         assertThat(outTicTacToe.isPlaying(), equalTo(true));
     }
 
@@ -124,7 +124,7 @@ public class InputProcessorTest {
         String outMessage = (String) processorOutput.getLeft();
         TicTacToe outTicTacToe = (TicTacToe) processorOutput.getRight();
 
-        assertThat(outMessage, equalTo(InputValidatorResult.VALID_MOVE.message() + ". X . \n. . . \n. . O \n"));
+        assertThat(outMessage, equalTo(InputValidatorResult.VALID_MOVE.message() + "\n" + ". X . \n. . . \n. . O \n"));
         assertThat(outTicTacToe.isPlaying(), equalTo(true));
     }
 
@@ -142,7 +142,9 @@ public class InputProcessorTest {
         String outMessage = (String) processorOutput.getLeft();
         TicTacToe outTicTacToe = (TicTacToe) processorOutput.getRight();
 
-        assertThat(outMessage, equalTo("Player 1 won!\n"));
+        assertThat(outMessage, equalTo(("\nMove accepted, here's the current board:\n" + "\n"
+                                        + outTicTacToe.getBoard().toString() + "\n"
+                                        + "Player 1 won!\n")));
         assertThat(outTicTacToe.isPlaying(), equalTo(false));
     }
 
@@ -160,7 +162,9 @@ public class InputProcessorTest {
         String outMessage = (String) processorOutput.getLeft();
         TicTacToe outTicTacToe = (TicTacToe) processorOutput.getRight();
 
-        assertThat(outMessage, equalTo("\nNo more moves available! It's a draw!\n"));
+        assertThat(outMessage, equalTo(("\nMove accepted, here's the current board:\n" + "\n"
+                                        + outTicTacToe.getBoard().toString() + "\n"
+                                        + "No more moves available! It's a draw!\n")));
         assertThat(outTicTacToe.isPlaying(), equalTo(false));
     }
 

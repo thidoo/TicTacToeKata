@@ -1,6 +1,6 @@
-import Game.Model.IO.ConsoleWriter;
-import Game.Model.IO.InputReader;
-import Game.Model.TicTacToe;
+import Game.GameEngine;
+import Game.Service.IO.ConsoleWriter;
+import Game.Service.IO.InputReader;
 import Game.Service.*;
 import Game.Service.Coordinate.Coordinate2DConverter;
 
@@ -17,11 +17,10 @@ public class GameDriver {
 
         InputProcessor inputProcessor = new InputProcessor(inputValidator, stateDecider, coordinate2DConverter);
         Configurator configurator = new Configurator(inputReader, consoleWriter);
-
         GameEngine gameEngine = new GameEngine(inputReader, consoleWriter, inputProcessor);
+        GameLooper gameLooper = new GameLooper(configurator, gameEngine);
 
         // Configure and run the game
-        TicTacToe ticTacToe = configurator.configure();
-        gameEngine.run(ticTacToe);
+        gameLooper.loop();
     }
 }

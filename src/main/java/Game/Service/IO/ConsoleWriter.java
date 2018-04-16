@@ -1,4 +1,4 @@
-package Game.Model.IO;
+package Game.Service.IO;
 
 import Game.Model.Board.GameBoard;
 import Game.Model.Player;

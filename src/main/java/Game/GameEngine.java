@@ -1,9 +1,10 @@
-package Game.Service;
+package Game;
 
-import Game.Model.IO.ConsoleWriter;
-import Game.Model.IO.InputReader;
+import Game.Service.IO.ConsoleWriter;
+import Game.Service.IO.InputReader;
 import Game.Model.TicTacToe;
 import Game.Model.TupleStructure.Pair;
+import Game.Service.InputProcessor;
 
 public class GameEngine {
 
@@ -38,7 +39,7 @@ public class GameEngine {
     }
 
     private Pair readPlayerInputFromConsole(TicTacToe ticTacToe){
-        String consoleInput = inputReader.readFromConsole();
+        String consoleInput = inputReader.read();
         Pair gameInput = new Pair<>(consoleInput, ticTacToe);
 
         return gameInput;
@@ -49,5 +50,13 @@ public class GameEngine {
         String outMessage = (String) gameOutput.getLeft();
 
         consoleWriter.write(outMessage);
+    }
+
+    public ConsoleWriter getConsoleWriter() {
+        return this.consoleWriter;
+    }
+
+    public InputReader getInputReader() {
+        return this.inputReader;
     }
 }

@@ -1,4 +1,4 @@
-package Game.Model.IO;
+package Game.Service.IO;
 
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ public class InputReader {
         scanner = new Scanner(System.in);
     }
 
-    public String readFromConsole(){
+    public String read(){
         return scanner.nextLine();
     }
 }

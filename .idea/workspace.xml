@@ -2,64 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0431de1-f943-48a5-b74a-a9f735e52818" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Game/Model/TicTacToe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Game/Model/TupleStructure/Pair.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Game/Model/TupleStructure/Triplet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Game/Service/Configurator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Game/Service/GameEngine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Game/Service/InputProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Game/Service/SetUp/GameConfigurator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Game/Service/ConfiguratorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Game/Service/InputProcessorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Game/Service/SetUp/GameEngineConfiguratorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Game/Service/GameLooper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Model/Board/GameBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Game/Model/Board/GameBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Model/Board/GameBoard2D.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Game/Model/Board/GameBoard2D.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Model/Cell/Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Game/Model/Cell/Cell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Model/Cell/Cell2D.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Game/Model/Cell/Cell2D.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Model/Console/ConsolePrinter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Model/Console/ConsoleReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Model/Coordinate/Coordinate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Game/Model/Coordinate/Coordinate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Model/Coordinate/Coordinate2D.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Game/Model/Coordinate/Coordinate2D.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Model/InputValidatorOutcome.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Game/Model/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Model/ValidatorResult/Exit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Model/ValidatorResult/InputValidatorResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Model/ValidatorResult/InvalidCoordinateFormat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Model/ValidatorResult/MoveOutOfBound.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Model/ValidatorResult/OccupiedCell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Model/ValidatorResult/ValidMove.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Service/Coordinate/Coordinate2DConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Game/Service/Coordinate/Coordinate2DConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Service/Coordinate/CoordinateConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Game/Service/Coordinate/CoordinateConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Service/Game.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Service/GameStateDecider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Service/InputValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Game/Service/InputValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Model/State/Draw.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Game/Model/State/Draw.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Model/State/Win.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Game/Model/State/Win.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Service/GameEngine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Service/InputProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Game/Service/InputProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Game/Service/SetUp/GameConfigurator.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/GameDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/GameDriver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/GameComponent/Coordinate/Coordinate2DServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/GameService/GameStatusCheckerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/GameService/InputValidatorTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/GameTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Model/Board/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Model/Board/GameBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Model/Board/GameBoard2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Model/Board/GameBoard2D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Model/Cell/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Model/Cell/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Model/Cell/Cell2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Model/Cell/Cell2D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Model/Console/ConsolePrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Model/IO/ConsoleWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Model/Console/ConsoleReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Model/IO/InputReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Model/Coordinate/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Model/Coordinate/Coordinate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Model/Coordinate/Coordinate2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Model/Coordinate/Coordinate2D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Model/InputValidatorOutcome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Model/InputValidatorResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Model/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/Game/Model/Coordinate/Coordinate2DConverterTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/Game/Service/ConfiguratorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/Game/Service/ConfiguratorTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/Game/Service/InputProcessorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/Game/Service/InputProcessorTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/Game/Service/SetUp/GameConfiguratorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Model/IO/InputReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Model/IO/InputReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Model/InputValidatorResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Model/InputValidatorResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Model/State/Draw.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Model/State/Draw.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game/Model/State/Win.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Model/State/Win.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Service/Coordinate/Coordinate2DConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Service/Coordinate/Coordinate2DConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Service/Coordinate/CoordinateConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Service/Coordinate/CoordinateConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Service/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Service/GameStateDecider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Service/StateDecider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Service/InputValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Service/InputValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Service/Configurator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Service/Configurator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Service/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Service/InputProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Service/InputProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Service/SetUp/GameConfigurator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Game/Model/Coordinate/Coordinate2DConverterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Game/Model/Coordinate/Coordinate2DConverterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Game/Service/GameStateDeciderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Game/Service/StateDeciderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Game/Service/InputValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Game/Service/InputValidatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GameTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Game/Model/Coordinate/Coordinate2DConverterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Game/Service/Coordinate/Coordinate2DConverterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Game/Service/ConfiguratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Game/Service/ConfiguratorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Game/Service/InputProcessorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Game/Service/InputProcessorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Game/Service/SetUp/GameEngineConfiguratorTest.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -85,11 +52,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Win.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/State/Win.java">
+      <file leaf-file-name="InputProcessor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Game/Service/InputProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+            <state relative-caret-position="616">
+              <caret line="52" column="42" lean-forward="true" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,16 +68,20 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/IO/InputReader.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+              <folding>
+                <element signature="e#220#221#0" expanded="true" />
+                <element signature="e#261#262#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NotFinished.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/State/NotFinished.java">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+            <state relative-caret-position="480">
+              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -124,20 +98,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/Player.java">
+      <file leaf-file-name="InputValidatorResult.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/InputValidatorResult.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+            <state relative-caret-position="57">
+              <caret line="3" column="49" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InputProcessor.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Game/Service/InputProcessor.java">
+      <file leaf-file-name="Configurator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Game/Service/Configurator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="715">
-              <caret line="59" column="99" selection-start-line="59" selection-start-column="99" selection-end-line="59" selection-end-column="99" />
+            <state relative-caret-position="497">
+              <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -145,42 +119,54 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameBoard2D.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/Board/GameBoard2D.java">
+      <file leaf-file-name="GameEngine.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Game/GameEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+            <state relative-caret-position="1120">
+              <caret line="59" column="32" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
               <folding>
-                <element signature="e#3746#3747#0" expanded="true" />
-                <element signature="e#3781#3782#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1648#1649#0" expanded="true" />
+                <element signature="e#1675#1676#0" expanded="true" />
+                <element signature="e#1732#1733#0" expanded="true" />
+                <element signature="e#1753#1754#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InputValidatorResult.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/InputValidatorResult.java">
+      <file leaf-file-name="InputProcessorTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Game/Service/InputProcessorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+            <state relative-caret-position="287">
+              <caret line="45" column="8" lean-forward="true" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Draw.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/State/Draw.java">
+      <file leaf-file-name="GameDriver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/GameDriver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+            <state relative-caret-position="114">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameState.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/State/GameState.java">
+      <file leaf-file-name="GameLooper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Game/Service/GameLooper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+            <state relative-caret-position="406">
+              <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -192,8 +178,8 @@
       <list>
         <option value="Interface" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -499,11 +485,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/GameService/ValidatorResult/InputValidatorResult.java" />
-        <option value="$PROJECT_DIR$/src/main/java/GameService/GameStateDecider.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Service/GameStateDecider.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Game/Service/GameStateDecider.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Game/Model/State/GameState.java" />
         <option value="$PROJECT_DIR$/src/main/java/Game/Model/InputValidatorOutcome.java" />
         <option value="$PROJECT_DIR$/src/main/java/Game/Model/Console/ConsolePrinter.java" />
         <option value="$PROJECT_DIR$/src/main/java/Game/Model/GameState.java" />
@@ -526,11 +507,9 @@
         <option value="$PROJECT_DIR$/src/main/java/Game/Service/InputValidator1.java" />
         <option value="$PROJECT_DIR$/src/test/java/Game/Service/InputValidator1Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/Game/Model/Triplet.java" />
-        <option value="$PROJECT_DIR$/src/test/java/Game/Service/InputProcessorTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/GameTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/GameEngineTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Game/Model/IO/ConsoleReader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Game/Model/IO/InputReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/Game/Model/IO/InputPrinter.java" />
         <option value="$PROJECT_DIR$/src/main/java/GameEngine.java" />
         <option value="$PROJECT_DIR$/src/main/java/Game/Model/IO/InputWriter.java" />
@@ -541,15 +520,22 @@
         <option value="$PROJECT_DIR$/src/main/java/Game/Model/Board/GameBoard.java" />
         <option value="$PROJECT_DIR$/src/main/java/Game/Model/Coordinate/Coordinate.java" />
         <option value="$PROJECT_DIR$/src/main/java/Game/Model/Cell/Cell.java" />
-        <option value="$PROJECT_DIR$/src/test/java/Game/Service/ConfiguratorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Game/Model/TicTacToe.java" />
         <option value="$PROJECT_DIR$/src/main/java/Game/Service/Game.java" />
         <option value="$PROJECT_DIR$/src/main/java/Game/Service/GameEngine.java" />
-        <option value="$PROJECT_DIR$/src/main/java/GameDriver.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Game/Model/State/Win.java" />
         <option value="$PROJECT_DIR$/src/main/java/Game/Model/Board/GameBoard2D.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Game/Model/InputValidatorResult.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Game/InputProcessor.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Game/Service/Coordinate/Coordinate2DConverterTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Game/Service/ConfiguratorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Game/Service/InputProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Game/Model/State/Draw.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Game/Model/State/Win.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Game/Service/InputProcessorTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Game/GameEngine.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Game/Model/IO/InputReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Game/Service/GameLooper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GameDriver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Game/Model/InputValidatorResult.java" />
       </list>
     </option>
   </component>
@@ -630,6 +616,47 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Game" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="IO" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.thidoo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TicTacToeKata" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Game" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="TupleStructure" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.thidoo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TicTacToeKata" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Game" type="462c0819:PsiDirectoryNode" />
+              <item name="Service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.thidoo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TicTacToeKata" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.thidoo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TicTacToeKata" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.thidoo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TicTacToeKata" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -637,60 +664,9 @@
               <item name="TicTacToeKata" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="com.thidoo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TicTacToeKata" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="com.thidoo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TicTacToeKata" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="com.thidoo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TicTacToeKata" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
               <item name="Service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="com.thidoo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="com.thidoo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: org.hamcrest:hamcrest-core:1.3" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="com.thidoo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: org.hamcrest:hamcrest-core:1.3" type="70bed36:NamedLibraryElementNode" />
-              <item name="hamcrest-core-1.3.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="com.thidoo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: org.hamcrest:hamcrest-core:1.3" type="70bed36:NamedLibraryElementNode" />
-              <item name="hamcrest-core-1.3.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="hamcrest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="com.thidoo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: org.hamcrest:hamcrest-core:1.3" type="70bed36:NamedLibraryElementNode" />
-              <item name="hamcrest-core-1.3.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="hamcrest" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="Coordinate" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -750,43 +726,20 @@
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="ConfiguratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Coordinate2DConverterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="com.thidoo_test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Game.Service.*" />
+          <option name="PATTERN" value="Game.Service.Coordinate.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Game.Service" />
-      <option name="MAIN_CLASS_NAME" value="Game.Service.ConfiguratorTest" />
+      <option name="PACKAGE_NAME" value="Game.Service.Coordinate" />
+      <option name="MAIN_CLASS_NAME" value="Game.Service.Coordinate.Coordinate2DConverterTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="ConfiguratorTest.allowForCustomisedTokenTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="com.thidoo_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Game.Service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Game.Service" />
-      <option name="MAIN_CLASS_NAME" value="Game.Service.ConfiguratorTest" />
-      <option name="METHOD_NAME" value="allowForCustomisedTokenTest" />
-      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -819,7 +772,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="InputProcessorTest.drawTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InputProcessorTest.validMoveTest_emptyBoardStart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="com.thidoo_test" />
       <extension name="coverage">
         <pattern>
@@ -831,7 +784,30 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="Game.Service" />
       <option name="MAIN_CLASS_NAME" value="Game.Service.InputProcessorTest" />
-      <option name="METHOD_NAME" value="drawTest" />
+      <option name="METHOD_NAME" value="validMoveTest_emptyBoardStart" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="InputProcessorTest.validMoveTest_occupiedBoardStart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="com.thidoo_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Game.Service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Game.Service" />
+      <option name="MAIN_CLASS_NAME" value="Game.Service.InputProcessorTest" />
+      <option name="METHOD_NAME" value="validMoveTest_occupiedBoardStart" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -895,18 +871,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.InputProcessorTest" />
-      <item itemvalue="JUnit.InputProcessorTest.drawTest" />
-      <item itemvalue="JUnit.ConfiguratorTest" />
-      <item itemvalue="JUnit.ConfiguratorTest.allowForCustomisedTokenTest" />
+      <item itemvalue="JUnit.InputProcessorTest.validMoveTest_occupiedBoardStart" />
+      <item itemvalue="JUnit.InputProcessorTest.validMoveTest_emptyBoardStart" />
+      <item itemvalue="JUnit.Coordinate2DConverterTest" />
       <item itemvalue="Application.GameDriver" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.GameDriver" />
-        <item itemvalue="JUnit.ConfiguratorTest" />
-        <item itemvalue="JUnit.ConfiguratorTest.allowForCustomisedTokenTest" />
+        <item itemvalue="JUnit.Coordinate2DConverterTest" />
+        <item itemvalue="JUnit.InputProcessorTest.validMoveTest_emptyBoardStart" />
+        <item itemvalue="JUnit.InputProcessorTest.validMoveTest_occupiedBoardStart" />
         <item itemvalue="JUnit.InputProcessorTest" />
-        <item itemvalue="JUnit.InputProcessorTest.drawTest" />
       </list>
     </recent_temporary>
   </component>
@@ -934,44 +910,44 @@
       <workItem from="1523422778963" duration="801000" />
       <workItem from="1523489340752" duration="15415000" />
       <workItem from="1523579756360" duration="13204000" />
-      <workItem from="1523744870834" duration="5773000" />
+      <workItem from="1523744870834" duration="9173000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ConfiguratorTest_allowForCustomisedTokenTest - 2018.04.16 at 09h 18m 52s.xml">
-      <configuration name="ConfiguratorTest.allowForCustomisedTokenTest" configurationId="JUnit" />
+    <history-entry file="InputValidatorTest - 2018.04.16 at 10h 59m 38s.xml">
+      <configuration name="InputValidatorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConfiguratorTest_allowForCustomisedTokenTest - 2018.04.16 at 09h 19m 09s.xml">
-      <configuration name="ConfiguratorTest.allowForCustomisedTokenTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConfiguratorTest - 2018.04.16 at 09h 20m 07s.xml">
+    <history-entry file="ConfiguratorTest - 2018.04.16 at 10h 59m 45s.xml">
       <configuration name="ConfiguratorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConfiguratorTest - 2018.04.16 at 09h 21m 05s.xml">
-      <configuration name="ConfiguratorTest" configurationId="JUnit" />
+    <history-entry file="ConfiguratorTest_allowForCustomisedTokenTest2 - 2018.04.16 at 11h 00m 58s.xml">
+      <configuration name="ConfiguratorTest.allowForCustomisedTokenTest2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConfiguratorTest - 2018.04.16 at 09h 21m 49s.xml">
-      <configuration name="ConfiguratorTest" configurationId="JUnit" />
+    <history-entry file="InputProcessorTest - 2018.04.16 at 11h 05m 26s.xml">
+      <configuration name="InputProcessorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConfiguratorTest_allowForCustomisedTokenTest - 2018.04.16 at 09h 29m 03s.xml">
-      <configuration name="ConfiguratorTest.allowForCustomisedTokenTest" configurationId="JUnit" />
+    <history-entry file="InputProcessorTest_drawTest - 2018.04.16 at 11h 07m 21s.xml">
+      <configuration name="InputProcessorTest.drawTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConfiguratorTest_allowForCustomisedTokenTest - 2018.04.16 at 09h 51m 25s.xml">
-      <configuration name="ConfiguratorTest.allowForCustomisedTokenTest" configurationId="JUnit" />
+    <history-entry file="InputProcessorTest_winTest - 2018.04.16 at 11h 08m 02s.xml">
+      <configuration name="InputProcessorTest.winTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConfiguratorTest_allowForCustomisedTokenTest - 2018.04.16 at 09h 52m 39s.xml">
-      <configuration name="ConfiguratorTest.allowForCustomisedTokenTest" configurationId="JUnit" />
+    <history-entry file="InputProcessorTest - 2018.04.16 at 11h 08m 08s.xml">
+      <configuration name="InputProcessorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConfiguratorTest_allowForCustomisedTokenTest - 2018.04.16 at 09h 52m 48s.xml">
-      <configuration name="ConfiguratorTest.allowForCustomisedTokenTest" configurationId="JUnit" />
+    <history-entry file="InputProcessorTest_validMoveTest_occupiedBoardStart - 2018.04.16 at 11h 11m 57s.xml">
+      <configuration name="InputProcessorTest.validMoveTest_occupiedBoardStart" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConfiguratorTest - 2018.04.16 at 10h 06m 53s.xml">
-      <configuration name="ConfiguratorTest" configurationId="JUnit" />
+    <history-entry file="InputProcessorTest_validMoveTest_emptyBoardStart - 2018.04.16 at 11h 12m 11s.xml">
+      <configuration name="InputProcessorTest.validMoveTest_emptyBoardStart" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Coordinate2DConverterTest - 2018.04.16 at 11h 12m 33s.xml">
+      <configuration name="Coordinate2DConverterTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48676000" />
+    <option name="totallyTimeSpent" value="52076000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -994,7 +970,7 @@
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32935324" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32935324" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.2676617" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17039403" />
@@ -1023,8 +999,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/GameService/ValidatorOutcome/Running/RunningOutcome.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/ValidatorResult/Exit.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/ValidatorResult/InvalidCoordinateFormat.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/ValidatorResult/MoveOutOfBound.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/ValidatorResult/OccupiedCell.java" />
@@ -1056,26 +1030,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Game/Service/InputValidator1.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/Game/Service/InputValidator1Test.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/Game/Service/InputValidatorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="45" column="90" selection-start-line="45" selection-start-column="90" selection-end-line="45" selection-end-column="90" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Game/Service/StateDeciderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="89" column="35" lean-forward="true" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/TupleStructure/Pair.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -1091,13 +1045,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/GameEngineTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Service/StateDecider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Game/Service/SetUp/GameEngineConfiguratorTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
@@ -1215,70 +1162,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Service/Configurator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="38" column="19" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Game/Service/ConfiguratorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="26" column="121" lean-forward="true" selection-start-line="26" selection-start-column="121" selection-end-line="26" selection-end-column="121" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Game/Service/InputProcessorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GameEngine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
           <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Service/GameEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Service/InputValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GameDriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1295,62 +1182,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/IO/ConsoleWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/IO/InputReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/State/Draw.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/State/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/State/NotFinished.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/State/Win.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/InputValidatorResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1365,13 +1200,177 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Service/InputProcessor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Service/StateDecider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="59" column="99" selection-start-line="59" selection-start-column="99" selection-end-line="59" selection-end-column="99" />
+        <state relative-caret-position="76">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Game/Service/StateDeciderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1653">
+          <caret line="89" column="35" lean-forward="true" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Game/Service/InputValidatorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="45" column="90" selection-start-line="45" selection-start-column="90" selection-end-line="45" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Game/Service/ConfiguratorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Service/InputValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/State/Draw.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/State/NotFinished.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/State/Win.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Game/Service/Coordinate/Coordinate2DConverterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Service/InputProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="52" column="42" lean-forward="true" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Game/Service/InputProcessorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="45" column="8" lean-forward="true" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/IO/InputReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding>
+            <element signature="e#220#221#0" expanded="true" />
+            <element signature="e#261#262#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Game/GameEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1120">
+          <caret line="59" column="32" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1648#1649#0" expanded="true" />
+            <element signature="e#1675#1676#0" expanded="true" />
+            <element signature="e#1732#1733#0" expanded="true" />
+            <element signature="e#1753#1754#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Service/Configurator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/IO/ConsoleWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GameDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Service/GameLooper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Model/InputValidatorResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="49" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
         </state>
       </provider>
     </entry>

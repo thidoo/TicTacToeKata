@@ -12,7 +12,7 @@ public class Win implements GameState {
 
     @Override
     public String getMessage() {
-        String message = String.format("\nPlayer %d won!\n", winner.getPlayerOrder());
+        String message = String.format("Player %d won!\n", winner.getPlayerOrder());
         return message;
     }
 }

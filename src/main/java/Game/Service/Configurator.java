@@ -1,9 +1,8 @@
 package Game.Service;
 
-import Game.Model.Board.GameBoard;
 import Game.Model.Board.GameBoard2D;
-import Game.Model.IO.ConsoleWriter;
-import Game.Model.IO.InputReader;
+import Game.Service.IO.ConsoleWriter;
+import Game.Service.IO.InputReader;
 import Game.Model.Player;
 import Game.Model.TicTacToe;
 import Game.Model.TupleStructure.Triplet;
@@ -20,13 +19,13 @@ public class Configurator {
 
     public TicTacToe configure(){
         consoleWriter.write("Player to go first, please enter a letter to represent your token: ");
-        String player1Token = inputReader.readFromConsole();
+        String player1Token = inputReader.read();
 
         consoleWriter.write("Player to go second, please enter a letter to represent your token: ");
-        String player2Token = inputReader.readFromConsole();
+        String player2Token = inputReader.read();
 
         consoleWriter.write("Please enter a preferred board size: ");
-        String boardSize = inputReader.readFromConsole();
+        String boardSize = inputReader.read();
 
         Triplet configurationInput = new Triplet<>(player1Token, player2Token, boardSize);
 

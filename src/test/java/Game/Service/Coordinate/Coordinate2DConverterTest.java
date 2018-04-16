@@ -1,5 +1,6 @@
-package Game.Model.Coordinate;
+package Game.Service.Coordinate;
 
+import Game.Model.Coordinate.Coordinate2D;
 import Game.Service.Coordinate.Coordinate2DConverter;
 import org.junit.Before;
 import org.junit.Test;
