@@ -4,7 +4,7 @@ import Game.Model.Coordinate.Coordinate;
 import Game.Model.InputValidatorResult;
 import Game.Model.State.GameState;
 import Game.Model.State.NotFinished;
-import Game.Model.TicTacToe;
+import Game.Model.TicTacToe.TicTacToe2D;
 import Game.Model.TupleStructure.Pair;
 import Game.Service.Coordinate.CoordinateConverter;
 
@@ -22,14 +22,14 @@ public class InputProcessor {
 
     public Pair process(Pair processorInput) {
         String playerInput = (String) processorInput.getLeft();
-        TicTacToe inGame = (TicTacToe) processorInput.getRight();
+        TicTacToe2D inGame = (TicTacToe2D) processorInput.getRight();
 
         InputValidatorResult inputValidatorResult = inputValidator.validate(inGame.getBoard(), playerInput);
 
         return computeOutput(playerInput, inGame, inputValidatorResult);
     }
 
-    private Pair computeOutput(String playerInput, TicTacToe inGame, InputValidatorResult inputValidatorResult){
+    private Pair computeOutput(String playerInput, TicTacToe2D inGame, InputValidatorResult inputValidatorResult){
         if (inputValidatorResult == InputValidatorResult.VALID_MOVE) {
             return computeValidMoveOutput(playerInput, inGame, inputValidatorResult);
         }
@@ -40,14 +40,14 @@ public class InputProcessor {
         return new Pair<>(inputValidatorResult.message(), inGame);
     }
 
-    private Pair computeValidMoveOutput(String playerInput, TicTacToe inGame, InputValidatorResult inputValidatorResult){
+    private Pair computeValidMoveOutput(String playerInput, TicTacToe2D inGame, InputValidatorResult inputValidatorResult){
         Coordinate coordinate = coordinateConverter.convert(playerInput);
         inGame.getBoard().updateCell(inGame.getCurrentPlayer().getToken(), coordinate);
 
         return determineGameState(inGame, coordinate, inputValidatorResult);
     }
 
-    private Pair determineGameState(TicTacToe game, Coordinate coordinate, InputValidatorResult inputValidatorResult){
+    private Pair determineGameState(TicTacToe2D game, Coordinate coordinate, InputValidatorResult inputValidatorResult){
         GameState state = stateDecider.check(game.getBoard(), coordinate, game.getCurrentPlayer());
 
         String outMessage;

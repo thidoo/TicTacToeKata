@@ -3,7 +3,7 @@ package Game.Service.Converter;
 import Game.Model.Board.GameBoard2D;
 import Game.Model.CustomException.CannotConvertToTicTacToeException;
 import Game.Model.Player;
-import Game.Model.TicTacToe;
+import Game.Model.TicTacToe.TicTacToe2D;
 import Game.Service.Board.GameBoard2DService;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -21,16 +21,16 @@ public class JSONConverter {
         this.gameBoard2DService = gameBoard2DService;
     }
 
-    public String convertToJSONString(TicTacToe ticTacToe){
+    public String convertToJSONString(TicTacToe2D ticTacToe2D){
         JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("player1", ticTacToe.getPlayer1().getToken());
-        jsonObject.addProperty("player2", ticTacToe.getPlayer2().getToken());
-        jsonObject.addProperty("currentPlayer", ticTacToe.getCurrentPlayer().getToken());
-        jsonObject.addProperty("board", ticTacToe.getBoard().toString());
+        jsonObject.addProperty("player1", ticTacToe2D.getPlayer1().getToken());
+        jsonObject.addProperty("player2", ticTacToe2D.getPlayer2().getToken());
+        jsonObject.addProperty("currentPlayer", ticTacToe2D.getCurrentPlayer().getToken());
+        jsonObject.addProperty("board", ticTacToe2D.getBoard().toString());
         return jsonObject.toString();
     }
 
-    public TicTacToe convertToTicTacToe(File jsonFile) throws CannotConvertToTicTacToeException {
+    public TicTacToe2D convertToTicTacToe(File jsonFile) throws CannotConvertToTicTacToeException {
         JsonParser jsonParser = new JsonParser();
 
         try {
@@ -52,17 +52,17 @@ public class JSONConverter {
         throw new CannotConvertToTicTacToeException();
     }
 
-    private TicTacToe createTicTacToe(String player1Token, String player2Token, String currentPlayerToken, String board) throws CannotConvertToTicTacToeException {
+    private TicTacToe2D createTicTacToe(String player1Token, String player2Token, String currentPlayerToken, String board) throws CannotConvertToTicTacToeException {
 
         GameBoard2D gameBoard2D = gameBoard2DService.convertFromBoardStringtoBoard(board);
 
         if (player1Token.equals(currentPlayerToken)){
-            return new TicTacToe(new Player(1, player1Token),
+            return new TicTacToe2D(new Player(1, player1Token),
                     new Player(2, player2Token),
                     gameBoard2D);
         }
         else if (player2Token.equals(currentPlayerToken)){
-            return new TicTacToe(new Player(1, player2Token),
+            return new TicTacToe2D(new Player(1, player2Token),
                     new Player(2, player1Token),
                     gameBoard2D);
         }

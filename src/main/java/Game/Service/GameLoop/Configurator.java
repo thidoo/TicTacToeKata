@@ -4,7 +4,7 @@ import Game.Model.Board.GameBoard2D;
 import Game.Service.IO.ConsoleWriter;
 import Game.Service.IO.InputReader;
 import Game.Model.Player;
-import Game.Model.TicTacToe;
+import Game.Model.TicTacToe.TicTacToe2D;
 import Game.Model.TupleStructure.Triplet;
 
 public class Configurator {
@@ -17,7 +17,7 @@ public class Configurator {
         this.inputReader = inputReader;
     }
 
-    public TicTacToe configure(){
+    public TicTacToe2D configure(){
         consoleWriter.write("Player to go first, please enter a letter to represent your token: ");
         String player1Token = inputReader.read();
 
@@ -32,11 +32,11 @@ public class Configurator {
         return createTicTacToe(configurationInput);
     }
 
-    public TicTacToe createTicTacToe(Triplet input) {
+    public TicTacToe2D createTicTacToe(Triplet input) {
         Player player1 = new Player(1, (String) input.getFirst());
         Player player2 = new Player(2, (String) input.getSecond());
         GameBoard2D gameBoard = new GameBoard2D(Integer.parseInt((String) input.getThird()));
 
-        return new TicTacToe(player1, player2, gameBoard);
+        return new TicTacToe2D(player1, player2, gameBoard);
     }
 }

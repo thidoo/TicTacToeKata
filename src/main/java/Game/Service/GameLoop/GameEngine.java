@@ -2,7 +2,7 @@ package Game.Service.GameLoop;
 
 import Game.Service.IO.ConsoleWriter;
 import Game.Service.IO.InputReader;
-import Game.Model.TicTacToe;
+import Game.Model.TicTacToe.TicTacToe2D;
 import Game.Model.TupleStructure.Pair;
 import Game.Service.InputProcessor;
 
@@ -12,7 +12,7 @@ public class GameEngine {
     private ConsoleWriter consoleWriter;
     private InputProcessor inputProcessor;
 
-    private TicTacToe ticTacToe;
+    private TicTacToe2D ticTacToe2D;
 
     public GameEngine(InputReader inputReader, ConsoleWriter consoleWriter, InputProcessor inputProcessor) {
         this.inputReader = inputReader;
@@ -20,33 +20,33 @@ public class GameEngine {
         this.inputProcessor = inputProcessor;
     }
 
-    public TicTacToe run(TicTacToe ticTacToe) {
-        this.ticTacToe = ticTacToe;
-        this.ticTacToe.setIsPlaying(true);
+    public TicTacToe2D run(TicTacToe2D ticTacToe2D) {
+        this.ticTacToe2D = ticTacToe2D;
+        this.ticTacToe2D.setIsPlaying(true);
 
-        consoleWriter.startGame(this.ticTacToe.getBoard());
+        consoleWriter.startGame(this.ticTacToe2D.getBoard());
 
-        while (this.ticTacToe.isPlaying()) {
-            consoleWriter.prompt(this.ticTacToe.getCurrentPlayer());
+        while (this.ticTacToe2D.isPlaying()) {
+            consoleWriter.prompt(this.ticTacToe2D.getCurrentPlayer());
 
-            Pair gameInput = readPlayerInputFromConsole(this.ticTacToe);
+            Pair gameInput = readPlayerInputFromConsole(this.ticTacToe2D);
             Pair gameOutput = inputProcessor.process(gameInput);
 
             respondToPlayerInput(gameOutput);
         }
 
-        return this.ticTacToe;
+        return this.ticTacToe2D;
     }
 
-    private Pair readPlayerInputFromConsole(TicTacToe ticTacToe){
+    private Pair readPlayerInputFromConsole(TicTacToe2D ticTacToe2D){
         String consoleInput = inputReader.read();
-        Pair gameInput = new Pair<>(consoleInput, ticTacToe);
+        Pair gameInput = new Pair<>(consoleInput, ticTacToe2D);
 
         return gameInput;
     }
 
     private void respondToPlayerInput(Pair gameOutput){
-        this.ticTacToe = (TicTacToe) gameOutput.getRight();
+        this.ticTacToe2D = (TicTacToe2D) gameOutput.getRight();
         String outMessage = (String) gameOutput.getLeft();
 
         consoleWriter.write(outMessage);
