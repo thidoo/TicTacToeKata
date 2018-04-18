@@ -1,6 +1,7 @@
 package Game.Model;
 
 import Game.Model.Board.GameBoard;
+import Game.Model.Board.GameBoard2D;
 
 import java.util.Objects;
 

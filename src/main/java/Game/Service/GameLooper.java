@@ -1,27 +1,30 @@
 package Game.Service;
 
+import Game.Model.CannotConvertToTicTacToeException;
 import Game.Model.TicTacToe;
+
+import java.io.IOException;
 
 public class GameLooper {
 
     private boolean isLoop;
 
-    private Configurator configurator;
     private GameEngine gameEngine;
-    private PostExitProcessor postExitProcessor;
+    private PreGameProcessor preGameProcessor;
+    private PostGameProcessor postGameProcessor;
 
-    public GameLooper(Configurator configurator, GameEngine gameEngine, PostExitProcessor postExitProcessor) {
-        this.configurator = configurator;
+    public GameLooper(GameEngine gameEngine, PreGameProcessor preGameProcessor, PostGameProcessor postGameProcessor) {
         this.gameEngine = gameEngine;
-        this.postExitProcessor = postExitProcessor;
+        this.preGameProcessor = preGameProcessor;
+        this.postGameProcessor = postGameProcessor;
 
         this.isLoop = true;
     }
 
-    public void loop(){
+    public void loop() throws CannotConvertToTicTacToeException, IOException {
         while (isLoop){
             isLoop = false;
-            TicTacToe inTicTacToe = configurator.configure();
+            TicTacToe inTicTacToe = preGameProcessor.process();
             TicTacToe exitTicTacToe = gameEngine.run(inTicTacToe);
             processPostGame(exitTicTacToe);
         }
@@ -29,7 +32,7 @@ public class GameLooper {
 
     private void processPostGame(TicTacToe ticTacToe){
         if (!ticTacToe.isFinished()){
-            postExitProcessor.process(ticTacToe);
+            postGameProcessor.process(ticTacToe);
         }
         else {
             processLoopingRequest();

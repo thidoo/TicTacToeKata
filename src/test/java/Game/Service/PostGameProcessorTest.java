@@ -2,11 +2,11 @@ package Game.Service;
 
 import org.junit.Test;
 
-public class PostExitProcessorTest {
+public class PostGameProcessorTest {
 
     @Test
     public void shouldSaveGame_ifRequestedTest(){
-        //PostExitProcessor postExitProcessor = new PostExitProcessor();
+        //PostGameProcessor postExitProcessor = new PostGameProcessor();
 
     }
 }

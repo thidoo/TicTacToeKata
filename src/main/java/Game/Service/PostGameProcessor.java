@@ -8,14 +8,16 @@ import com.google.gson.JsonObject;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class PostExitProcessor {
+public class PostGameProcessor {
 
     private InputReader inputReader;
     private ConsoleWriter consoleWriter;
+    private StringTTTConverter stringTTTConverter;
 
-    public PostExitProcessor(InputReader inputReader, ConsoleWriter consoleWriter) {
+    public PostGameProcessor(InputReader inputReader, ConsoleWriter consoleWriter, StringTTTConverter stringTTTConverter) {
         this.inputReader = inputReader;
         this.consoleWriter = consoleWriter;
+        this.stringTTTConverter = stringTTTConverter;
     }
 
     public void process(TicTacToe ticTacToe){
@@ -30,8 +32,8 @@ public class PostExitProcessor {
     private void saveCurrentGame(TicTacToe ticTacToe) {
         try {
             FileWriter fileWriter = new FileWriter("tictactoe.txt");
-            fileWriter.write("Test");
-            //fileWriter.write(convertToJSON(ticTacToe));
+            //fileWriter.write("Test");
+            fileWriter.write(stringTTTConverter.convertTTTToString(ticTacToe));
             fileWriter.close();
         }
         catch (IOException e){
@@ -39,5 +41,4 @@ public class PostExitProcessor {
             e.printStackTrace();
         }
     }
-
 }
