@@ -18,13 +18,13 @@ public class Configurator {
     }
 
     public TicTacToe2D configure(){
-        consoleWriter.write("Player to go first, please enter a letter to represent your token: ");
+        consoleWriter.write("\nPlayer to go first, please enter a letter to represent your token: ");
         String player1Token = inputReader.read();
 
-        consoleWriter.write("Player to go second, please enter a letter to represent your token: ");
+        consoleWriter.write("\nPlayer to go second, please enter a letter to represent your token: ");
         String player2Token = inputReader.read();
 
-        consoleWriter.write("Please enter a preferred board size: ");
+        consoleWriter.write("\nPlease enter a preferred board size: ");
         String boardSize = inputReader.read();
 
         Triplet configurationInput = new Triplet<>(player1Token, player2Token, boardSize);
