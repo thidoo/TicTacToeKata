@@ -2,13 +2,8 @@ package Game.Service;
 
 import Game.Model.Board.GameBoard;
 import Game.Model.Coordinate.Coordinate;
+import Game.Model.InputValidatorResult;
 import Game.Service.Coordinate.Coordinate2DConverter;
-import Game.Model.ValidatorResult.Exit;
-import Game.Model.ValidatorResult.InputValidatorResult;
-import Game.Model.ValidatorResult.InvalidCoordinateFormat;
-import Game.Model.ValidatorResult.MoveOutOfBound;
-import Game.Model.ValidatorResult.OccupiedCell;
-import Game.Model.ValidatorResult.ValidMove;
 
 public class InputValidator {
 
@@ -22,7 +17,7 @@ public class InputValidator {
 
     public InputValidatorResult validate(GameBoard gameBoard, String input){
         if (input.equals(QUIT_KEY)){
-            return new Exit();
+            return InputValidatorResult.EXIT;
         }
         else {
             return determineRunningOutcome(gameBoard, input);
@@ -32,22 +27,22 @@ public class InputValidator {
     private InputValidatorResult determineRunningOutcome(GameBoard gameBoard, String input){
 
         if (coordinate2DConverter.isCorrectFormat(input)){
-            Coordinate coordinate = coordinate2DConverter.convertToCoordinate(input);
+            Coordinate coordinate = coordinate2DConverter.convert(input);
 
             if (!gameBoard.contains(coordinate)){
-                return new MoveOutOfBound();
+                return InputValidatorResult.MOVE_OUT_OF_BOUND;
             }
             else {
                 if (gameBoard.isEmptyAtPosition(coordinate)){
-                    return new ValidMove();
+                    return InputValidatorResult.VALID_MOVE;
                 }
                 else {
-                    return new OccupiedCell();
+                    return InputValidatorResult.OCCUPIED_CELL;
                 }
             }
         }
         else{
-            return new InvalidCoordinateFormat();
+            return InputValidatorResult.INVALID_COORD_FORMAT;
         }
     }
 }

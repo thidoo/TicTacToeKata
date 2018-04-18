@@ -2,6 +2,8 @@ package Game.Model.Cell;
 
 import Game.Model.Coordinate.Coordinate;
 
+import java.util.Objects;
+
 public class Cell2D implements Cell {
 
     private Coordinate coordinate;
@@ -43,4 +45,15 @@ public class Cell2D implements Cell {
     public void setIsEmpty(boolean isEmpty) {
         this.isEmpty = isEmpty;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Cell2D)) return false;
+        Cell2D cell2D = (Cell2D) o;
+        return isEmpty() == cell2D.isEmpty() &&
+                Objects.equals(getCoordinate(), cell2D.getCoordinate()) &&
+                Objects.equals(getToken(), cell2D.getToken());
+    }
+
 }

@@ -16,4 +16,6 @@ public interface Cell {
     boolean isEmpty();
 
     void setIsEmpty(boolean isEmpty);
+
+    boolean equals(Object o);
 }

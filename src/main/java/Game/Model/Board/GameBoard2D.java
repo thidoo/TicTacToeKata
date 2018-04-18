@@ -4,6 +4,9 @@ import Game.Model.Cell.Cell2D;
 import Game.Model.Coordinate.Coordinate;
 import Game.Model.Coordinate.Coordinate2D;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class GameBoard2D implements GameBoard {
 
     private Cell2D[][] boardContent;
@@ -129,5 +132,27 @@ public class GameBoard2D implements GameBoard {
 
     public Cell2D[][] getBoardContent() {
         return boardContent;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof GameBoard2D)) return false;
+        GameBoard2D that = (GameBoard2D) o;
+        return boardSize == that.boardSize &&
+                Arrays.equals(getBoardContent(), that.getBoardContent());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < boardSize; i++){
+            for (int j = 0; j < boardSize; j++){
+                stringBuilder.append(boardContent[i][j].getToken() + " ");
+            }
+            stringBuilder.append("\n");
+        }
+
+        return stringBuilder.toString();
     }
 }

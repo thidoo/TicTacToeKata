@@ -11,7 +11,7 @@ public class Coordinate2DConverter implements CoordinateConverter {
         return input.matches("([0-9]+),([0-9]+)");
     }
 
-    public Coordinate convertToCoordinate(String input) {
+    public Coordinate convert(String input) {
         String[] xy = input.split(DEFAULT_COORDINATE_DELIMITER);
         return new Coordinate2D(Integer.parseInt(xy[0]) - 1, Integer.parseInt(xy[1]) - 1);
     }
