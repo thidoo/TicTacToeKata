@@ -35,7 +35,6 @@ public class InputProcessor {
         }
         else if (inputValidatorResult == InputValidatorResult.EXIT){
             inGame.setIsPlaying(false);
-            //processPostExit();
         }
 
         return new Pair<>(inputValidatorResult.message(), inGame);

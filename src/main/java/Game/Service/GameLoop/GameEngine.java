@@ -1,4 +1,4 @@
-package Game.Service;
+package Game.Service.GameLoop;
 
 import Game.Service.IO.ConsoleWriter;
 import Game.Service.IO.InputReader;

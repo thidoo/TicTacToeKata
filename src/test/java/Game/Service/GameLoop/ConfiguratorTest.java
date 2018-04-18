@@ -1,6 +1,7 @@
-package Game.Service;
+package Game.Service.GameLoop;
 
 import Game.Model.Board.GameBoard2D;
+import Game.Service.GameLoop.Configurator;
 import Game.Service.IO.ConsoleWriter;
 import Game.Service.IO.InputReader;
 import Game.Model.Player;

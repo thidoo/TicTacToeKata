@@ -1,9 +1,9 @@
-package Game.Service;
+package Game.Service.GameLoop;
 
 import Game.Model.TicTacToe;
 import Game.Service.IO.ConsoleWriter;
 import Game.Service.IO.InputReader;
-import com.google.gson.JsonObject;
+import Game.Service.Converter.StringTTTConverter;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -31,8 +31,7 @@ public class PostGameProcessor {
 
     private void saveCurrentGame(TicTacToe ticTacToe) {
         try {
-            FileWriter fileWriter = new FileWriter("tictactoe.txt");
-            //fileWriter.write("Test");
+            FileWriter fileWriter = new FileWriter(PreGameProcessor.SAVED_GAME_FILE_PATH);
             fileWriter.write(stringTTTConverter.convertTTTToString(ticTacToe));
             fileWriter.close();
         }

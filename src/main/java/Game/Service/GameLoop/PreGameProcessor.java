@@ -1,13 +1,16 @@
-package Game.Service;
+package Game.Service.GameLoop;
 
-import Game.Model.CannotConvertToTicTacToeException;
+import Game.Model.CustomException.CannotConvertToTicTacToeException;
 import Game.Model.TicTacToe;
 import Game.Service.IO.ConsoleWriter;
 import Game.Service.IO.InputReader;
+import Game.Service.Converter.StringTTTConverter;
 
 import java.io.*;
 
 public class PreGameProcessor {
+
+    static final String SAVED_GAME_FILE_PATH = "./tictactoe.txt";
 
     private InputReader inputReader;
     private ConsoleWriter consoleWriter;
@@ -22,16 +25,15 @@ public class PreGameProcessor {
     }
 
     public TicTacToe process() throws CannotConvertToTicTacToeException, IOException {
-        File file = new File("./tictactoe.txt");
+        File file = new File(SAVED_GAME_FILE_PATH);
         TicTacToe ticTacToe;
 
         if (file.exists()){
             consoleWriter.write("Would you like to load from the previous game?[Y/N]");
             String response = inputReader.read();
+
             if (response.equals("Y") || response.equals("y")){
-                BufferedReader reader = new BufferedReader(new FileReader("./tictactoe.txt"));
-                String text = readText(reader);
-                ticTacToe = stringTTTConverter.convertStringToTTT(text);
+                ticTacToe = convertTextToTicTacToe(SAVED_GAME_FILE_PATH);
                 file.delete();
             }
             else {
@@ -45,18 +47,20 @@ public class PreGameProcessor {
         return ticTacToe;
     }
 
-    private String readText(BufferedReader reader) throws IOException {
-        String         line = null;
-        StringBuilder  stringBuilder = new StringBuilder();
+    private TicTacToe convertTextToTicTacToe(String filePath) throws IOException, CannotConvertToTicTacToeException {
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath));
+        StringBuilder stringBuilder = new StringBuilder();
+        String line;
 
         try {
-            while((line = reader.readLine()) != null) {
+            while((line = bufferedReader.readLine()) != null) {
                 stringBuilder.append(line);
                 stringBuilder.append("\n");
             }
-            return stringBuilder.toString();
+            return stringTTTConverter.convertStringToTTT(stringBuilder.toString());
+
         } finally {
-            reader.close();
+            bufferedReader.close();
         }
     }
 

@@ -1,4 +1,4 @@
-package Game.Service;
+package Game.Service.GameLoop;
 
 import Game.Model.Board.GameBoard2D;
 import Game.Service.IO.ConsoleWriter;

@@ -1,6 +1,6 @@
-package Game.Service;
+package Game.Service.GameLoop;
 
-import Game.Model.CannotConvertToTicTacToeException;
+import Game.Model.CustomException.CannotConvertToTicTacToeException;
 import Game.Model.TicTacToe;
 
 import java.io.IOException;

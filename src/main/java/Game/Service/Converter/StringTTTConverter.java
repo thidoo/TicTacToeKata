@@ -1,7 +1,7 @@
-package Game.Service;
+package Game.Service.Converter;
 
 import Game.Model.Board.GameBoard2D;
-import Game.Model.CannotConvertToTicTacToeException;
+import Game.Model.CustomException.CannotConvertToTicTacToeException;
 import Game.Model.Player;
 import Game.Model.TicTacToe;
 import Game.Service.Board.GameBoard2DService;

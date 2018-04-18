@@ -1,4 +1,4 @@
-package Game.Service;
+package Game.Service.GameLoop;
 
 import org.junit.Test;
 
