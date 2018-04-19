@@ -6,6 +6,7 @@ import Game.Model.InputValidatorResult;
 import Game.Model.TicTacToe.TicTacToe2D;
 import Game.Model.TupleStructure.Pair;
 import Game.Model.Player;
+import Game.Service.Board.GameBoard2DService;
 import Game.Service.Coordinate.Coordinate2DConverter;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,6 +22,7 @@ public class InputProcessorTest {
     public void setUp(){
         inputProcessor = new InputProcessor(new InputValidator(new Coordinate2DConverter()),
                                             new StateDecider(),
+                                            new GameBoard2DService(),
                                             new Coordinate2DConverter());
     }
 

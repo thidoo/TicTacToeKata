@@ -6,7 +6,5 @@ public class PostGameProcessorTest {
 
     @Test
     public void shouldSaveGame_ifRequestedTest(){
-        //PostGameProcessor postExitProcessor = new PostGameProcessor();
-
     }
 }

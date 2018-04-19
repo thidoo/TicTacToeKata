@@ -6,17 +6,20 @@ import Game.Model.State.GameState;
 import Game.Model.State.NotFinished;
 import Game.Model.TicTacToe.TicTacToe2D;
 import Game.Model.TupleStructure.Pair;
+import Game.Service.Board.GameBoardService;
 import Game.Service.Coordinate.CoordinateConverter;
 
 public class InputProcessor {
 
     private InputValidator inputValidator;
     private StateDecider stateDecider;
+    private GameBoardService gameBoardService;
     private CoordinateConverter coordinateConverter;
 
-    public InputProcessor(InputValidator inputValidator, StateDecider stateDecider, CoordinateConverter coordinateConverter) {
+    public InputProcessor(InputValidator inputValidator, StateDecider stateDecider, GameBoardService gameBoardService, CoordinateConverter coordinateConverter) {
         this.inputValidator = inputValidator;
         this.stateDecider = stateDecider;
+        this.gameBoardService = gameBoardService;
         this.coordinateConverter = coordinateConverter;
     }
 
@@ -48,7 +51,7 @@ public class InputProcessor {
     }
 
     private Pair determineGameState(TicTacToe2D game, Coordinate coordinate, InputValidatorResult inputValidatorResult){
-        GameState state = stateDecider.check(game.getBoard(), coordinate, game.getCurrentPlayer());
+        GameState state = stateDecider.check(gameBoardService, game.getBoard(), coordinate, game.getCurrentPlayer());
 
         String outMessage;
 
