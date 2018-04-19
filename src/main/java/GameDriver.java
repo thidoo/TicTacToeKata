@@ -24,7 +24,7 @@ public class GameDriver {
 
         InputValidator inputValidator = new InputValidator(coordinate2DConverter);
         StateDecider stateDecider = new StateDecider();
-        InputProcessor inputProcessor = new InputProcessor(inputValidator, stateDecider, coordinate2DConverter);
+        InputProcessor inputProcessor = new InputProcessor(inputValidator, stateDecider, gameBoard2DService, coordinate2DConverter);
 
         Configurator configurator = new Configurator(inputReader, consoleWriter);
         PreGameProcessor preGameProcessor = new PreGameProcessor(inputReader, consoleWriter, stringTTTConverter, configurator);

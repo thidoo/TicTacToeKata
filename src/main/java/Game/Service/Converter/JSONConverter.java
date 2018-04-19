@@ -54,7 +54,7 @@ public class JSONConverter {
 
     private TicTacToe2D createTicTacToe(String player1Token, String player2Token, String currentPlayerToken, String board) throws CannotConvertToTicTacToeException {
 
-        GameBoard2D gameBoard2D = gameBoard2DService.convertFromBoardStringtoBoard(board);
+        GameBoard2D gameBoard2D = (GameBoard2D) gameBoard2DService.convertFromBoardStringtoBoard(board);
 
         if (player1Token.equals(currentPlayerToken)){
             return new TicTacToe2D(new Player(1, player1Token),

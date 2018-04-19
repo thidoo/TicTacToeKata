@@ -7,6 +7,7 @@ import Game.Model.Player;
 import Game.Model.State.NotFinished;
 import Game.Model.State.GameState;
 import Game.Model.State.Win;
+import Game.Service.Board.GameBoard2DService;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -27,7 +28,7 @@ public class StateDeciderTest {
         GameBoard board = new GameBoard2D(3);
         ((GameBoard2D) board).getBoardContent()[1][1].setToken("X");
 
-        GameState gameGameState = stateDecider.check(board, new Coordinate2D(1,1), new Player("X"));
+        GameState gameGameState = stateDecider.check(new GameBoard2DService(), board, new Coordinate2D(1,1), new Player("X"));
         boolean expectedResult = gameGameState instanceof NotFinished;
 
         assertThat(expectedResult, equalTo(true));
@@ -38,7 +39,7 @@ public class StateDeciderTest {
         GameBoard winBoard = createWinBoard_HorizontalLineFilled();
         winBoard.printBoard();
 
-        GameState gameGameState = stateDecider.check(winBoard, new Coordinate2D(0,2), new Player("X"));
+        GameState gameGameState = stateDecider.check(new GameBoard2DService(), winBoard, new Coordinate2D(0,2), new Player("X"));
         boolean expectedResult = gameGameState instanceof Win;
 
         assertThat(expectedResult, equalTo(true));
@@ -49,7 +50,7 @@ public class StateDeciderTest {
         GameBoard winBoard = createWinBoard_VerticalLineFilled();
         winBoard.printBoard();
 
-        GameState gameGameState = stateDecider.check(winBoard, new Coordinate2D(1,0), new Player("X"));
+        GameState gameGameState = stateDecider.check(new GameBoard2DService(), winBoard, new Coordinate2D(1,0), new Player("X"));
         boolean expectedResult = gameGameState instanceof Win;
 
         assertThat(expectedResult, equalTo(true));
@@ -60,7 +61,7 @@ public class StateDeciderTest {
         GameBoard winBoard = createWinBoard_DiagonalLineFilled_NegativeSlope();
         winBoard.printBoard();
 
-        GameState gameGameState = stateDecider.check(winBoard, new Coordinate2D(1,1), new Player("X"));
+        GameState gameGameState = stateDecider.check(new GameBoard2DService(), winBoard, new Coordinate2D(1,1), new Player("X"));
         boolean expectedResult = gameGameState instanceof Win;
 
         assertThat(expectedResult, equalTo(true));
@@ -71,7 +72,7 @@ public class StateDeciderTest {
         GameBoard winBoard = createWinBoard_DiagonalLineFilled_PositiveSlope();
         winBoard.printBoard();
 
-        GameState gameGameState = stateDecider.check(winBoard, new Coordinate2D(1,1), new Player("X"));
+        GameState gameGameState = stateDecider.check(new GameBoard2DService(), winBoard, new Coordinate2D(1,1), new Player("X"));
         boolean expectedResult = gameGameState instanceof Win;
 
         assertThat(expectedResult, equalTo(true));
