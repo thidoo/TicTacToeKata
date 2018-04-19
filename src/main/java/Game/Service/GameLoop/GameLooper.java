@@ -1,7 +1,7 @@
 package Game.Service.GameLoop;
 
 import Game.Model.CustomException.CannotConvertToTicTacToeException;
-import Game.Model.TicTacToe.TicTacToe2D;
+import Game.Model.TicTacToe.TicTacToe2Players;
 
 import java.io.IOException;
 
@@ -24,15 +24,15 @@ public class GameLooper {
     public void loop() throws CannotConvertToTicTacToeException, IOException {
         while (isLoop){
             isLoop = false;
-            TicTacToe2D inTicTacToe2D = preGameProcessor.process();
-            TicTacToe2D exitTicTacToe2D = gameEngine.run(inTicTacToe2D);
-            processPostGame(exitTicTacToe2D);
+            TicTacToe2Players inTicTacToe2Players = preGameProcessor.process();
+            TicTacToe2Players exitTicTacToe2Players = gameEngine.run(inTicTacToe2Players);
+            processPostGame(exitTicTacToe2Players);
         }
     }
 
-    private void processPostGame(TicTacToe2D ticTacToe2D){
-        if (!ticTacToe2D.isFinished()){
-            postGameProcessor.process(ticTacToe2D);
+    private void processPostGame(TicTacToe2Players ticTacToe2Players){
+        if (!ticTacToe2Players.isFinished()){
+            postGameProcessor.process(ticTacToe2Players);
         }
         else {
             processLoopingRequest();

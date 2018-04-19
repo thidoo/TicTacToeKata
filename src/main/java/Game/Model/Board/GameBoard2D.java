@@ -14,7 +14,6 @@ public class GameBoard2D implements GameBoard {
 
     public GameBoard2D(int size) {
         this.boardSize = size;
-        this.boardContent = new Cell2D[size][size];
         initialiseEmptyBoard(size);
     }
 
@@ -59,6 +58,7 @@ public class GameBoard2D implements GameBoard {
     }
 
     private void initialiseEmptyBoard(int size){
+        this.boardContent = new Cell2D[size][size];
         for (int i=0; i<size; i++){
             for (int j=0; j<size; j++){
                 boardContent[i][j] = new Cell2D(new Coordinate2D(i,j));

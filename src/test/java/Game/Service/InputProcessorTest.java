@@ -3,7 +3,7 @@ package Game.Service;
 import Game.Model.Board.GameBoard2D;
 import Game.Model.Coordinate.Coordinate2D;
 import Game.Model.InputValidatorResult;
-import Game.Model.TicTacToe.TicTacToe2D;
+import Game.Model.TicTacToe.TicTacToe2Players;
 import Game.Model.TupleStructure.Pair;
 import Game.Model.Player;
 import Game.Service.Board.GameBoard2DService;
@@ -28,146 +28,146 @@ public class InputProcessorTest {
 
     @Test
     public void exit_ShouldStopGame(){
-        TicTacToe2D inputTicTacToe2D = new TicTacToe2D(new Player(1, "X"),
+        TicTacToe2Players inputTicTacToe2Players = new TicTacToe2Players(new Player(1, "X"),
                                                         new Player(2, "O"),
                                                         new GameBoard2D(3));
-        inputTicTacToe2D.setIsPlaying(true);
+        inputTicTacToe2Players.setIsPlaying(true);
 
-        Pair processorInput = new Pair<>("q", inputTicTacToe2D);
+        Pair processorInput = new Pair<>("q", inputTicTacToe2Players);
         Pair processorOutput = inputProcessor.process(processorInput);
 
         String outMessage = (String) processorOutput.getLeft();
-        TicTacToe2D outTicTacToe2D = (TicTacToe2D) processorOutput.getRight();
+        TicTacToe2Players outTicTacToe2Players = (TicTacToe2Players) processorOutput.getRight();
 
         assertThat(outMessage, equalTo(InputValidatorResult.EXIT.message()));
-        assertThat(outTicTacToe2D.isPlaying(), equalTo(false));
+        assertThat(outTicTacToe2Players.isPlaying(), equalTo(false));
     }
 
     @Test
     public void inValidCoordinateFormatTest(){
-        TicTacToe2D inputTicTacToe2D = new TicTacToe2D(new Player(1, "X"),
+        TicTacToe2Players inputTicTacToe2Players = new TicTacToe2Players(new Player(1, "X"),
                                                                 new Player(2, "O"),
                                                                 new GameBoard2D(3));
-        inputTicTacToe2D.setIsPlaying(true);
+        inputTicTacToe2Players.setIsPlaying(true);
 
-        Pair processorInput = new Pair<>("12", inputTicTacToe2D);
+        Pair processorInput = new Pair<>("12", inputTicTacToe2Players);
         Pair processorOutput = inputProcessor.process(processorInput);
 
         String outMessage = (String) processorOutput.getLeft();
-        TicTacToe2D outTicTacToe2D = (TicTacToe2D) processorOutput.getRight();
+        TicTacToe2Players outTicTacToe2Players = (TicTacToe2Players) processorOutput.getRight();
 
         assertThat(outMessage, equalTo(InputValidatorResult.INVALID_COORD_FORMAT.message()));
-        assertThat(outTicTacToe2D.isPlaying(), equalTo(true));
+        assertThat(outTicTacToe2Players.isPlaying(), equalTo(true));
     }
 
     @Test
     public void outOfBoundMoveTest(){
-        TicTacToe2D inputTicTacToe2D = new TicTacToe2D(new Player(1, "X"),
+        TicTacToe2Players inputTicTacToe2Players = new TicTacToe2Players(new Player(1, "X"),
                                                                 new Player(2, "O"),
                                                                 new GameBoard2D(3));
-        inputTicTacToe2D.setIsPlaying(true);
+        inputTicTacToe2Players.setIsPlaying(true);
 
-        Pair processorInput = new Pair<>("1,5", inputTicTacToe2D);
+        Pair processorInput = new Pair<>("1,5", inputTicTacToe2Players);
         Pair processorOutput = inputProcessor.process(processorInput);
 
         String outMessage = (String) processorOutput.getLeft();
-        TicTacToe2D outTicTacToe2D = (TicTacToe2D) processorOutput.getRight();
+        TicTacToe2Players outTicTacToe2Players = (TicTacToe2Players) processorOutput.getRight();
 
         assertThat(outMessage, equalTo(InputValidatorResult.MOVE_OUT_OF_BOUND.message()));
-        assertThat(outTicTacToe2D.isPlaying(), equalTo(true));
+        assertThat(outTicTacToe2Players.isPlaying(), equalTo(true));
     }
 
     @Test
     public void occupiedCellTest(){
-        TicTacToe2D inputTicTacToe2D = new TicTacToe2D(new Player(1, "X"),
+        TicTacToe2Players inputTicTacToe2Players = new TicTacToe2Players(new Player(1, "X"),
                                                                 new Player(2, "O"),
                                                                 new GameBoard2D(3));
-        inputTicTacToe2D.setIsPlaying(true);
-        inputTicTacToe2D.getBoard().updateCell("O", new Coordinate2D(0,0));
+        inputTicTacToe2Players.setIsPlaying(true);
+        inputTicTacToe2Players.getBoard().updateCell("O", new Coordinate2D(0,0));
 
-        Pair processorInput = new Pair<>("1,1", inputTicTacToe2D);
+        Pair processorInput = new Pair<>("1,1", inputTicTacToe2Players);
         Pair processorOutput = inputProcessor.process(processorInput);
 
         String outMessage = (String) processorOutput.getLeft();
-        TicTacToe2D outTicTacToe2D = (TicTacToe2D) processorOutput.getRight();
+        TicTacToe2Players outTicTacToe2Players = (TicTacToe2Players) processorOutput.getRight();
 
         assertThat(outMessage, equalTo(InputValidatorResult.OCCUPIED_CELL.message()));
-        assertThat(outTicTacToe2D.isPlaying(), equalTo(true));
+        assertThat(outTicTacToe2Players.isPlaying(), equalTo(true));
     }
 
     @Test
     public void validMoveTest_emptyBoardStart(){
-        TicTacToe2D inputTicTacToe2D = new TicTacToe2D(new Player(1, "X"),
+        TicTacToe2Players inputTicTacToe2Players = new TicTacToe2Players(new Player(1, "X"),
                                                                 new Player(2, "O"),
                                                                 new GameBoard2D(3));
-        inputTicTacToe2D.setIsPlaying(true);
+        inputTicTacToe2Players.setIsPlaying(true);
 
-        Pair processorInput = new Pair<>("1,2", inputTicTacToe2D);
+        Pair processorInput = new Pair<>("1,2", inputTicTacToe2Players);
         Pair processorOutput = inputProcessor.process(processorInput);
 
         String outMessage = (String) processorOutput.getLeft();
-        TicTacToe2D outTicTacToe2D = (TicTacToe2D) processorOutput.getRight();
+        TicTacToe2Players outTicTacToe2Players = (TicTacToe2Players) processorOutput.getRight();
 
         assertThat(outMessage, equalTo(InputValidatorResult.VALID_MOVE.message() + "\n" + ". X . \n. . . \n. . . \n"));
-        assertThat(outTicTacToe2D.isPlaying(), equalTo(true));
+        assertThat(outTicTacToe2Players.isPlaying(), equalTo(true));
     }
 
     @Test
     public void validMoveTest_occupiedBoardStart(){
-        TicTacToe2D inputTicTacToe2D = new TicTacToe2D(new Player(1, "X"),
+        TicTacToe2Players inputTicTacToe2Players = new TicTacToe2Players(new Player(1, "X"),
                                                                 new Player(2, "O"),
                                                                 new GameBoard2D(3));
-        inputTicTacToe2D.setIsPlaying(true);
-        inputTicTacToe2D.getBoard().updateCell("O", new Coordinate2D(2,2));
+        inputTicTacToe2Players.setIsPlaying(true);
+        inputTicTacToe2Players.getBoard().updateCell("O", new Coordinate2D(2,2));
 
-        Pair processorInput = new Pair<>("1,2", inputTicTacToe2D);
+        Pair processorInput = new Pair<>("1,2", inputTicTacToe2Players);
         Pair processorOutput = inputProcessor.process(processorInput);
 
         String outMessage = (String) processorOutput.getLeft();
-        TicTacToe2D outTicTacToe2D = (TicTacToe2D) processorOutput.getRight();
+        TicTacToe2Players outTicTacToe2Players = (TicTacToe2Players) processorOutput.getRight();
 
         assertThat(outMessage, equalTo(InputValidatorResult.VALID_MOVE.message() + "\n" + ". X . \n. . . \n. . O \n"));
-        assertThat(outTicTacToe2D.isPlaying(), equalTo(true));
+        assertThat(outTicTacToe2Players.isPlaying(), equalTo(true));
     }
 
     @Test
     public void winTest(){
         GameBoard2D winBoard = createWinBoard_HorizontalLineFilled();
-        TicTacToe2D inputTicTacToe2D = new TicTacToe2D(new Player(1, "X"),
+        TicTacToe2Players inputTicTacToe2Players = new TicTacToe2Players(new Player(1, "X"),
                                                                 new Player(2, "O"),
                                                                 winBoard);
-        inputTicTacToe2D.setIsPlaying(true);
+        inputTicTacToe2Players.setIsPlaying(true);
 
-        Pair processorInput = new Pair<>("1,2", inputTicTacToe2D);
+        Pair processorInput = new Pair<>("1,2", inputTicTacToe2Players);
         Pair processorOutput = inputProcessor.process(processorInput);
 
         String outMessage = (String) processorOutput.getLeft();
-        TicTacToe2D outTicTacToe2D = (TicTacToe2D) processorOutput.getRight();
+        TicTacToe2Players outTicTacToe2Players = (TicTacToe2Players) processorOutput.getRight();
 
         assertThat(outMessage, equalTo(("\nMove accepted, here's the current board:\n" + "\n"
-                                        + outTicTacToe2D.getBoard().toString() + "\n"
+                                        + outTicTacToe2Players.getBoard().toString() + "\n"
                                         + "Player 1 won!\n")));
-        assertThat(outTicTacToe2D.isPlaying(), equalTo(false));
+        assertThat(outTicTacToe2Players.isPlaying(), equalTo(false));
     }
 
     @Test
     public void drawTest(){
         GameBoard2D fullBoard = createFullBoard();
-        TicTacToe2D inputTicTacToe2D = new TicTacToe2D(new Player(1, "X"),
+        TicTacToe2Players inputTicTacToe2Players = new TicTacToe2Players(new Player(1, "X"),
                                                                 new Player(2, "O"),
                                                                 fullBoard);
-        inputTicTacToe2D.setIsPlaying(true);
+        inputTicTacToe2Players.setIsPlaying(true);
 
-        Pair processorInput = new Pair<>("1,2", inputTicTacToe2D);
+        Pair processorInput = new Pair<>("1,2", inputTicTacToe2Players);
         Pair processorOutput = inputProcessor.process(processorInput);
 
         String outMessage = (String) processorOutput.getLeft();
-        TicTacToe2D outTicTacToe2D = (TicTacToe2D) processorOutput.getRight();
+        TicTacToe2Players outTicTacToe2Players = (TicTacToe2Players) processorOutput.getRight();
 
         assertThat(outMessage, equalTo(("\nMove accepted, here's the current board:\n" + "\n"
-                                        + outTicTacToe2D.getBoard().toString() + "\n"
+                                        + outTicTacToe2Players.getBoard().toString() + "\n"
                                         + "No more moves available! It's a draw!\n")));
-        assertThat(outTicTacToe2D.isPlaying(), equalTo(false));
+        assertThat(outTicTacToe2Players.isPlaying(), equalTo(false));
     }
 
     private GameBoard2D createWinBoard_HorizontalLineFilled(){

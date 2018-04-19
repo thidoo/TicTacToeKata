@@ -4,7 +4,7 @@ import Game.Model.Coordinate.Coordinate;
 import Game.Model.InputValidatorResult;
 import Game.Model.State.GameState;
 import Game.Model.State.NotFinished;
-import Game.Model.TicTacToe.TicTacToe2D;
+import Game.Model.TicTacToe.TicTacToe2Players;
 import Game.Model.TupleStructure.Pair;
 import Game.Service.Board.GameBoardService;
 import Game.Service.Coordinate.CoordinateConverter;
@@ -25,14 +25,14 @@ public class InputProcessor {
 
     public Pair process(Pair processorInput) {
         String playerInput = (String) processorInput.getLeft();
-        TicTacToe2D inGame = (TicTacToe2D) processorInput.getRight();
+        TicTacToe2Players inGame = (TicTacToe2Players) processorInput.getRight();
 
         InputValidatorResult inputValidatorResult = inputValidator.validate(inGame.getBoard(), playerInput);
 
         return computeOutput(playerInput, inGame, inputValidatorResult);
     }
 
-    private Pair computeOutput(String playerInput, TicTacToe2D inGame, InputValidatorResult inputValidatorResult){
+    private Pair computeOutput(String playerInput, TicTacToe2Players inGame, InputValidatorResult inputValidatorResult){
         if (inputValidatorResult == InputValidatorResult.VALID_MOVE) {
             return computeValidMoveOutput(playerInput, inGame, inputValidatorResult);
         }
@@ -43,14 +43,14 @@ public class InputProcessor {
         return new Pair<>(inputValidatorResult.message(), inGame);
     }
 
-    private Pair computeValidMoveOutput(String playerInput, TicTacToe2D inGame, InputValidatorResult inputValidatorResult){
+    private Pair computeValidMoveOutput(String playerInput, TicTacToe2Players inGame, InputValidatorResult inputValidatorResult){
         Coordinate coordinate = coordinateConverter.convert(playerInput);
         inGame.getBoard().updateCell(inGame.getCurrentPlayer().getToken(), coordinate);
 
         return determineGameState(inGame, coordinate, inputValidatorResult);
     }
 
-    private Pair determineGameState(TicTacToe2D game, Coordinate coordinate, InputValidatorResult inputValidatorResult){
+    private Pair determineGameState(TicTacToe2Players game, Coordinate coordinate, InputValidatorResult inputValidatorResult){
         GameState state = stateDecider.check(gameBoardService, game.getBoard(), coordinate, game.getCurrentPlayer());
 
         String outMessage;

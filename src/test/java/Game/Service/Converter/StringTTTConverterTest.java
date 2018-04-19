@@ -4,7 +4,7 @@ import Game.Model.Board.GameBoard2D;
 import Game.Model.Coordinate.Coordinate2D;
 import Game.Model.CustomException.CannotConvertToTicTacToeException;
 import Game.Model.Player;
-import Game.Model.TicTacToe.TicTacToe2D;
+import Game.Model.TicTacToe.TicTacToe2Players;
 import Game.Service.Board.GameBoard2DService;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,7 +23,7 @@ public class StringTTTConverterTest {
 
     @Test
     public void convertTTTtoStringTest_EmptyBoardCase(){
-        TicTacToe2D ticTacToe = new TicTacToe2D(new Player(1, "X"),
+        TicTacToe2Players ticTacToe = new TicTacToe2Players(new Player(1, "X"),
                 new Player(2, "O"),
                 new GameBoard2D(3));
 
@@ -35,7 +35,7 @@ public class StringTTTConverterTest {
 
     @Test
     public void convertTTTtoStringTest_BoardWithOneTokenPlacedCase(){
-        TicTacToe2D ticTacToe = createTicTacToe2DWithOneTokenPlaced();
+        TicTacToe2Players ticTacToe = createTicTacToe2DWithOneTokenPlaced();
 
         String expected = "X,O,X,X . . \n. . . \n. . . \n";
         String actual = stringTTTConverter.convertTTTToString(ticTacToe);
@@ -46,15 +46,15 @@ public class StringTTTConverterTest {
     @Test
     public void convertToStringToTTT() throws CannotConvertToTicTacToeException {
         String ticTacToe = "X,O,X,X . . \n. . . \n. . . \n";
-        TicTacToe2D expected = createTicTacToe2DWithOneTokenPlaced();
-        TicTacToe2D actual = stringTTTConverter.convertStringToTTT(ticTacToe);
+        TicTacToe2Players expected = createTicTacToe2DWithOneTokenPlaced();
+        TicTacToe2Players actual = stringTTTConverter.convertStringToTTT(ticTacToe);
 
         assertThat(actual.getCurrentPlayer().getToken(), equalTo(expected.getCurrentPlayer().getToken()));
         assertThat(actual.getBoard().toString(), equalTo(expected.getBoard().toString()));
     }
 
-    private TicTacToe2D createTicTacToe2DWithOneTokenPlaced() {
-        return new TicTacToe2D(new Player(1, "X"),
+    private TicTacToe2Players createTicTacToe2DWithOneTokenPlaced() {
+        return new TicTacToe2Players(new Player(1, "X"),
                 new Player(2, "O"),
                 createBoardWithOneTokenPlaced(3));
     }

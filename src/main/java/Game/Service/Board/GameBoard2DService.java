@@ -54,7 +54,6 @@ public class GameBoard2DService implements GameBoardService{
         }
 
         int i = 0;
-
         while (i<boardSize){
             if (!(boardContent[i][i].getToken().equals(boardContent[x][y].getToken()))){
                 return false;

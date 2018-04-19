@@ -2,15 +2,13 @@ package Game.Model.Cell;
 
 import Game.Model.Coordinate.Coordinate;
 
-import java.util.Objects;
-
-public class Cell2D implements Cell {
+public class Cell3D implements Cell{
 
     private Coordinate coordinate;
     private String token;
     private boolean isEmpty;
 
-    public Cell2D(Coordinate coordinate) {
+    public Cell3D(Coordinate coordinate) {
         this.coordinate = coordinate;
         this.token = Cell.DEFAULT_TOKEN;
         this.isEmpty = true;
@@ -28,7 +26,7 @@ public class Cell2D implements Cell {
 
     @Override
     public String getToken() {
-        return token;
+        return this.token;
     }
 
     @Override
@@ -45,5 +43,4 @@ public class Cell2D implements Cell {
     public void setIsEmpty(boolean isEmpty) {
         this.isEmpty = isEmpty;
     }
-
 }

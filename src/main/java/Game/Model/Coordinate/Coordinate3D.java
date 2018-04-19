@@ -1,13 +1,15 @@
 package Game.Model.Coordinate;
 
-public class Coordinate2D implements Coordinate {
+public class Coordinate3D implements Coordinate {
 
     private int x;
     private int y;
+    private int z;
 
-    public Coordinate2D(int x, int y) {
+    public Coordinate3D(int x, int y, int z) {
         this.x = x;
         this.y = y;
+        this.z = z;
     }
 
     @Override
@@ -22,6 +24,6 @@ public class Coordinate2D implements Coordinate {
 
     @Override
     public int getZ() {
-        return 0;
+        return z;
     }
 }

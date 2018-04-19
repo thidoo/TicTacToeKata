@@ -5,5 +5,5 @@ public interface Coordinate {
 
     int getY();
 
-    boolean equals(Object o);
+    int getZ();
 }
