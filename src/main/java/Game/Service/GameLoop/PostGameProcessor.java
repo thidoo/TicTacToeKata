@@ -1,6 +1,6 @@
 package Game.Service.GameLoop;
 
-import Game.Model.TicTacToe.TicTacToe2Players;
+import Game.Model.TicTacToe;
 import Game.Service.IO.ConsoleWriter;
 import Game.Service.IO.InputReader;
 import Game.Service.Converter.StringTTTConverter;
@@ -20,19 +20,19 @@ public class PostGameProcessor {
         this.stringTTTConverter = stringTTTConverter;
     }
 
-    public void process(TicTacToe2Players ticTacToe2Players){
+    public void process(TicTacToe ticTacToe){
         consoleWriter.write("Would you like to save this game?[Y/N]\n");
         String response = inputReader.read().trim();
 
         if (response.equals("Y") || response.equals("y")){
-            saveCurrentGame(ticTacToe2Players);
+            saveCurrentGame(ticTacToe);
         }
     }
 
-    private void saveCurrentGame(TicTacToe2Players ticTacToe2Players) {
+    private void saveCurrentGame(TicTacToe ticTacToe) {
         try {
             FileWriter fileWriter = new FileWriter(PreGameProcessor.SAVED_GAME_FILE_PATH);
-            fileWriter.write(stringTTTConverter.convertTTTToString(ticTacToe2Players));
+            fileWriter.write(stringTTTConverter.convertTTTToString(ticTacToe));
             fileWriter.close();
         }
         catch (IOException e){

@@ -4,17 +4,15 @@ import Game.Model.Coordinate.Coordinate;
 
 public interface GameBoard {
 
-    boolean isEmptyAtPosition(Coordinate coordinate);
+    boolean isEmptyAt(Coordinate coordinate);
 
     boolean isFull();
-
-    void printBoard();
 
     void updateCell(String token, Coordinate coordinate);
 
     boolean contains(Coordinate coordinate);
 
-    int getBoardSize();
+    int getSize();
 
     boolean equals(Object o);
 }

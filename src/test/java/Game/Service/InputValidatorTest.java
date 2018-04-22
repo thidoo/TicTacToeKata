@@ -1,9 +1,10 @@
 package Game.Service;
 
 import Game.Model.Board.GameBoard;
-import Game.Model.Board.GameBoard2D;
+import Game.Model.Board.Board2D;
 import Game.Model.InputValidatorResult;
 import Game.Service.Coordinate.Coordinate2DConverter;
+import Game.Service.GameLoop.InputValidator;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,7 +19,7 @@ public class InputValidatorTest {
     @Before
     public void setUp(){
         inputValidator = new InputValidator(new Coordinate2DConverter());
-        gameBoard = new GameBoard2D(3);
+        gameBoard = new Board2D(3);
     }
 
     @Test

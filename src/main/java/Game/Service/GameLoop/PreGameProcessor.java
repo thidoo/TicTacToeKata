@@ -1,7 +1,7 @@
 package Game.Service.GameLoop;
 
 import Game.Model.CustomException.CannotConvertToTicTacToeException;
-import Game.Model.TicTacToe.TicTacToe2Players;
+import Game.Model.TicTacToe;
 import Game.Service.IO.ConsoleWriter;
 import Game.Service.IO.InputReader;
 import Game.Service.Converter.StringTTTConverter;
@@ -24,30 +24,30 @@ public class PreGameProcessor {
         this.configurator = configurator;
     }
 
-    public TicTacToe2Players process() throws CannotConvertToTicTacToeException, IOException {
+    public TicTacToe process() throws CannotConvertToTicTacToeException, IOException {
         File file = new File(SAVED_GAME_FILE_PATH);
-        TicTacToe2Players ticTacToe2Players;
+        TicTacToe ticTacToe;
 
         if (file.exists()){
             consoleWriter.write("Would you like to load from the previous game?[Y/N]");
             String response = inputReader.read();
 
             if (response.equals("Y") || response.equals("y")){
-                ticTacToe2Players = convertTextToTicTacToe(SAVED_GAME_FILE_PATH);
+                ticTacToe = convertTextToTicTacToe(SAVED_GAME_FILE_PATH);
                 file.delete();
             }
             else {
-                ticTacToe2Players = configurator.configure();
+                ticTacToe = configurator.configure();
             }
         }
         else {
-            ticTacToe2Players = configurator.configure();
+            ticTacToe = configurator.configure();
         }
 
-        return ticTacToe2Players;
+        return ticTacToe;
     }
 
-    private TicTacToe2Players convertTextToTicTacToe(String filePath) throws IOException, CannotConvertToTicTacToeException {
+    private TicTacToe convertTextToTicTacToe(String filePath) throws IOException, CannotConvertToTicTacToeException {
         BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath));
         StringBuilder stringBuilder = new StringBuilder();
         String line;

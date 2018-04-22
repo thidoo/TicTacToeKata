@@ -5,7 +5,9 @@ import Game.Model.Coordinate.Coordinate;
 
 public interface GameBoardService {
 
-    boolean checkHasFilledLine(GameBoard gameBoard, Coordinate coordinate);
-    GameBoard convertFromBoardStringtoBoard(String boardString);
+    boolean checkForWinner(GameBoard gameBoard, Coordinate coordinate);
+
+    GameBoard convertStringToBoard(String boardString);
+
 }
 

@@ -1,4 +1,4 @@
-package Game.Service;
+package Game.Service.GameLoop;
 
 import Game.Model.Board.GameBoard;
 import Game.Model.Coordinate.Coordinate;
@@ -33,7 +33,7 @@ public class InputValidator {
                 return InputValidatorResult.MOVE_OUT_OF_BOUND;
             }
             else {
-                if (gameBoard.isEmptyAtPosition(coordinate)){
+                if (gameBoard.isEmptyAt(coordinate)){
                     return InputValidatorResult.VALID_MOVE;
                 }
                 else {
