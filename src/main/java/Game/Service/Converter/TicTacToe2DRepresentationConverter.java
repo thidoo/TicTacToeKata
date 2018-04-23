@@ -8,12 +8,12 @@ import Game.Service.Board.Board2DService;
 
 import java.util.StringJoiner;
 
-public class StringTTTConverter {
+public class TicTacToe2DRepresentationConverter {
 
     private final String DELIMITER = ",";
     private Board2DService board2DService;
 
-    public StringTTTConverter(Board2DService board2DService) {
+    public TicTacToe2DRepresentationConverter(Board2DService board2DService) {
         this.board2DService = board2DService;
     }
 

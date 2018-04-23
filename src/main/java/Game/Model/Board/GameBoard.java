@@ -1,5 +1,6 @@
 package Game.Model.Board;
 
+import Game.Model.Cell;
 import Game.Model.Coordinate.Coordinate;
 
 public interface GameBoard {
@@ -15,4 +16,5 @@ public interface GameBoard {
     int getSize();
 
     boolean equals(Object o);
+
 }

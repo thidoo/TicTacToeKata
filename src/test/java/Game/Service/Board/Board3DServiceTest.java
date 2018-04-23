@@ -1,6 +1,7 @@
 package Game.Service.Board;
 
 import Game.Model.Board.Board3D;
+import Game.Model.Board.GameBoard;
 import Game.Model.Coordinate.Coordinate3D;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,7 +15,7 @@ public class Board3DServiceTest {
 
     @Before
     public void setUp(){
-        board3DService = new Board3DService();
+        board3DService = new Board3DService(new Board2DService());
     }
 
     @Test
@@ -44,10 +45,19 @@ public class Board3DServiceTest {
     @Test
     public void checkLineFilledDiagonally(){
         Board3D winBoard = createBoardWithDiagonalLineFilled(3);
-        winBoard.printBoard();
 
         boolean result = board3DService.checkForWinner(winBoard, new Coordinate3D(2, 0, 0));
         assertThat(result, equalTo(true));
+    }
+
+    @Test
+    public void convertStringToBoardRepresentation(){
+        String boardString = ". . . \nX X X\n. . . \n\n. . . \n. . . \n. . . \n\n. . . \n. . . \n. . . \n\n";
+        Board3D expectedBoard = createBoardWithALineFilledHorizontally(3);
+
+        Board3D actual = (Board3D) board3DService.convertStringToBoard(boardString);
+        assertThat(actual.getSize(), equalTo(expectedBoard.getSize()));
+        assertThat(actual.toString(), equalTo(expectedBoard.toString()));
     }
 
     private Board3D createBoardWithALineFilledHorizontally(int size) {

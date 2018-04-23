@@ -37,7 +37,6 @@ public class StateDeciderTest {
     @Test
     public void boardWithHorizontalLineFilled_ShouldReturnWin(){
         GameBoard winBoard = createWinBoard_HorizontalLineFilled();
-        winBoard.printBoard();
 
         GameState gameGameState = stateDecider.check(new Board2DService(), winBoard, new Coordinate2D(0,2), new Player("X"));
         boolean expectedResult = gameGameState instanceof Win;
@@ -48,7 +47,6 @@ public class StateDeciderTest {
     @Test
     public void boardWithVerticalLineFilled_ShouldReturnWin(){
         GameBoard winBoard = createWinBoard_VerticalLineFilled();
-        winBoard.printBoard();
 
         GameState gameGameState = stateDecider.check(new Board2DService(), winBoard, new Coordinate2D(1,0), new Player("X"));
         boolean expectedResult = gameGameState instanceof Win;
@@ -59,8 +57,6 @@ public class StateDeciderTest {
     @Test
     public void boardWithDiagonalLineFilled_NegativeSlope_ShouldReturnWin(){
         GameBoard winBoard = createWinBoard_DiagonalLineFilled_NegativeSlope();
-        winBoard.printBoard();
-
         GameState gameGameState = stateDecider.check(new Board2DService(), winBoard, new Coordinate2D(1,1), new Player("X"));
         boolean expectedResult = gameGameState instanceof Win;
 
@@ -70,7 +66,6 @@ public class StateDeciderTest {
     @Test
     public void boardWithDiagonalLineFilled_PositiveSlope_ShouldReturnWin(){
         GameBoard winBoard = createWinBoard_DiagonalLineFilled_PositiveSlope();
-        winBoard.printBoard();
 
         GameState gameGameState = stateDecider.check(new Board2DService(), winBoard, new Coordinate2D(1,1), new Player("X"));
         boolean expectedResult = gameGameState instanceof Win;

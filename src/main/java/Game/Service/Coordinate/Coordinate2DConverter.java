@@ -5,9 +5,8 @@ import Game.Model.Coordinate.Coordinate2D;
 
 public class Coordinate2DConverter implements CoordinateConverter {
 
-    private static final String DEFAULT_COORDINATE_DELIMITER = ",";
-
     public boolean isCorrectFormat(String input){
+
         return input.matches("([0-9]+),([0-9]+)");
     }
 
