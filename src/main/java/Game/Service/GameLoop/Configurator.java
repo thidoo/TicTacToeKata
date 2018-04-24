@@ -1,11 +1,12 @@
 package Game.Service.GameLoop;
 
-import Game.Model.Board.GameBoard2D;
+import Game.Model.Board.Board2D;
+import Game.Model.Board.Board3D;
+import Game.Model.Board.GameBoard;
 import Game.Service.IO.ConsoleWriter;
 import Game.Service.IO.InputReader;
 import Game.Model.Player;
-import Game.Model.TicTacToe.TicTacToe2D;
-import Game.Model.TupleStructure.Triplet;
+import Game.Model.TicTacToe;
 
 public class Configurator {
 
@@ -17,26 +18,36 @@ public class Configurator {
         this.inputReader = inputReader;
     }
 
-    public TicTacToe2D configure(){
+    public TicTacToe configure(){
         consoleWriter.write("\nPlayer to go first, please enter a letter to represent your token: ");
         String player1Token = inputReader.read();
 
         consoleWriter.write("\nPlayer to go second, please enter a letter to represent your token: ");
         String player2Token = inputReader.read();
 
+        consoleWriter.write("\nWould you like to play the 2D or 3D version of TicTacToe?[2|3]");
+        String gameVersion = inputReader.read();
+
         consoleWriter.write("\nPlease enter a preferred board size: ");
         String boardSize = inputReader.read();
 
-        Triplet configurationInput = new Triplet<>(player1Token, player2Token, boardSize);
-
-        return createTicTacToe(configurationInput);
+        return createTicTacToe(player1Token, player2Token, gameVersion, boardSize);
     }
 
-    public TicTacToe2D createTicTacToe(Triplet input) {
-        Player player1 = new Player(1, (String) input.getFirst());
-        Player player2 = new Player(2, (String) input.getSecond());
-        GameBoard2D gameBoard = new GameBoard2D(Integer.parseInt((String) input.getThird()));
+    private TicTacToe createTicTacToe(String p1, String p2, String gameVersion, String boardSize) {
+        Player player1 = new Player(1, p1);
+        Player player2 = new Player(2, p2);
+        GameBoard gameBoard = createBoardOfCorrectDimension(gameVersion, boardSize);
 
-        return new TicTacToe2D(player1, player2, gameBoard);
+        return new TicTacToe(player1, player2, gameBoard);
+    }
+
+    private GameBoard createBoardOfCorrectDimension(String gameVersion, String boardSize){
+        if (gameVersion.equals("2")){
+            return new Board2D(Integer.parseInt(boardSize));
+        }
+        else {
+            return new Board3D(Integer.parseInt(boardSize));
+        }
     }
 }

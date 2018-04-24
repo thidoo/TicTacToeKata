@@ -1,13 +1,13 @@
 package Game.Service;
 
 import Game.Model.Board.GameBoard;
-import Game.Model.Board.GameBoard2D;
+import Game.Model.Board.Board2D;
 import Game.Model.Coordinate.Coordinate2D;
 import Game.Model.Player;
 import Game.Model.State.NotFinished;
 import Game.Model.State.GameState;
 import Game.Model.State.Win;
-import Game.Service.Board.GameBoard2DService;
+import Game.Service.Board.Board2DService;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -25,10 +25,10 @@ public class StateDeciderTest {
 
     @Test
     public void NotFinishedStatusTest(){
-        GameBoard board = new GameBoard2D(3);
-        ((GameBoard2D) board).getBoardContent()[1][1].setToken("X");
+        GameBoard board = new Board2D(3);
+        ((Board2D) board).getContent()[1][1].setToken("X");
 
-        GameState gameGameState = stateDecider.check(new GameBoard2DService(), board, new Coordinate2D(1,1), new Player("X"));
+        GameState gameGameState = stateDecider.check(new Board2DService(), board, new Coordinate2D(1,1), new Player("X"));
         boolean expectedResult = gameGameState instanceof NotFinished;
 
         assertThat(expectedResult, equalTo(true));
@@ -37,9 +37,8 @@ public class StateDeciderTest {
     @Test
     public void boardWithHorizontalLineFilled_ShouldReturnWin(){
         GameBoard winBoard = createWinBoard_HorizontalLineFilled();
-        winBoard.printBoard();
 
-        GameState gameGameState = stateDecider.check(new GameBoard2DService(), winBoard, new Coordinate2D(0,2), new Player("X"));
+        GameState gameGameState = stateDecider.check(new Board2DService(), winBoard, new Coordinate2D(0,2), new Player("X"));
         boolean expectedResult = gameGameState instanceof Win;
 
         assertThat(expectedResult, equalTo(true));
@@ -48,9 +47,8 @@ public class StateDeciderTest {
     @Test
     public void boardWithVerticalLineFilled_ShouldReturnWin(){
         GameBoard winBoard = createWinBoard_VerticalLineFilled();
-        winBoard.printBoard();
 
-        GameState gameGameState = stateDecider.check(new GameBoard2DService(), winBoard, new Coordinate2D(1,0), new Player("X"));
+        GameState gameGameState = stateDecider.check(new Board2DService(), winBoard, new Coordinate2D(1,0), new Player("X"));
         boolean expectedResult = gameGameState instanceof Win;
 
         assertThat(expectedResult, equalTo(true));
@@ -59,9 +57,7 @@ public class StateDeciderTest {
     @Test
     public void boardWithDiagonalLineFilled_NegativeSlope_ShouldReturnWin(){
         GameBoard winBoard = createWinBoard_DiagonalLineFilled_NegativeSlope();
-        winBoard.printBoard();
-
-        GameState gameGameState = stateDecider.check(new GameBoard2DService(), winBoard, new Coordinate2D(1,1), new Player("X"));
+        GameState gameGameState = stateDecider.check(new Board2DService(), winBoard, new Coordinate2D(1,1), new Player("X"));
         boolean expectedResult = gameGameState instanceof Win;
 
         assertThat(expectedResult, equalTo(true));
@@ -70,46 +66,45 @@ public class StateDeciderTest {
     @Test
     public void boardWithDiagonalLineFilled_PositiveSlope_ShouldReturnWin(){
         GameBoard winBoard = createWinBoard_DiagonalLineFilled_PositiveSlope();
-        winBoard.printBoard();
 
-        GameState gameGameState = stateDecider.check(new GameBoard2DService(), winBoard, new Coordinate2D(1,1), new Player("X"));
+        GameState gameGameState = stateDecider.check(new Board2DService(), winBoard, new Coordinate2D(1,1), new Player("X"));
         boolean expectedResult = gameGameState instanceof Win;
 
         assertThat(expectedResult, equalTo(true));
     }
 
     private GameBoard createWinBoard_HorizontalLineFilled(){
-        GameBoard winBoard = new GameBoard2D(3);
+        GameBoard winBoard = new Board2D(3);
         for (int i=0; i<3; i++){
-            ((GameBoard2D) winBoard).getBoardContent()[0][i].setToken("X");
-            ((GameBoard2D) winBoard).getBoardContent()[0][i].setIsEmpty(false);
+            ((Board2D) winBoard).getContent()[0][i].setToken("X");
+            ((Board2D) winBoard).getContent()[0][i].setEmpty(false);
         }
         return winBoard;
     }
 
     private GameBoard createWinBoard_VerticalLineFilled() {
-        GameBoard winBoard = new GameBoard2D(3);
+        GameBoard winBoard = new Board2D(3);
         for (int i=0; i<3; i++){
-            ((GameBoard2D) winBoard).getBoardContent()[i][0].setToken("X");
-            ((GameBoard2D) winBoard).getBoardContent()[i][0].setIsEmpty(false);
+            ((Board2D) winBoard).getContent()[i][0].setToken("X");
+            ((Board2D) winBoard).getContent()[i][0].setEmpty(false);
         }
         return winBoard;
     }
 
     private GameBoard createWinBoard_DiagonalLineFilled_NegativeSlope() {
-        GameBoard winBoard = new GameBoard2D(3);
+        GameBoard winBoard = new Board2D(3);
         for (int i=0; i<3; i++){
-            ((GameBoard2D) winBoard).getBoardContent()[i][i].setToken("X");
-            ((GameBoard2D) winBoard).getBoardContent()[i][i].setIsEmpty(false);
+            ((Board2D) winBoard).getContent()[i][i].setToken("X");
+            ((Board2D) winBoard).getContent()[i][i].setEmpty(false);
         }
         return winBoard;
     }
 
     private GameBoard createWinBoard_DiagonalLineFilled_PositiveSlope() {
-        GameBoard winBoard = new GameBoard2D(3);
+        GameBoard winBoard = new Board2D(3);
         for (int i=0; i<3; i++){
-            ((GameBoard2D) winBoard).getBoardContent()[3-1-i][i].setToken("X");
-            ((GameBoard2D) winBoard).getBoardContent()[3-1-i][i].setIsEmpty(false);
+            ((Board2D) winBoard).getContent()[3-1-i][i].setToken("X");
+            ((Board2D) winBoard).getContent()[3-1-i][i].setEmpty(false);
         }
         return winBoard;
     }

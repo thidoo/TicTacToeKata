@@ -1,9 +1,9 @@
 package Game.Service.GameLoop;
 
-import Game.Model.TicTacToe.TicTacToe2D;
+import Game.Model.TicTacToe;
 import Game.Service.IO.ConsoleWriter;
 import Game.Service.IO.InputReader;
-import Game.Service.Converter.StringTTTConverter;
+import Game.Service.Converter.TicTacToeRepresentationConverter;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -12,27 +12,27 @@ public class PostGameProcessor {
 
     private InputReader inputReader;
     private ConsoleWriter consoleWriter;
-    private StringTTTConverter stringTTTConverter;
+    private TicTacToeRepresentationConverter ticTacToeRepresentationConverter;
 
-    public PostGameProcessor(InputReader inputReader, ConsoleWriter consoleWriter, StringTTTConverter stringTTTConverter) {
+    public PostGameProcessor(InputReader inputReader, ConsoleWriter consoleWriter, TicTacToeRepresentationConverter ticTacToeRepresentationConverter) {
         this.inputReader = inputReader;
         this.consoleWriter = consoleWriter;
-        this.stringTTTConverter = stringTTTConverter;
+        this.ticTacToeRepresentationConverter = ticTacToeRepresentationConverter;
     }
 
-    public void process(TicTacToe2D ticTacToe2D){
+    public void process(TicTacToe ticTacToe){
         consoleWriter.write("Would you like to save this game?[Y/N]\n");
         String response = inputReader.read().trim();
 
         if (response.equals("Y") || response.equals("y")){
-            saveCurrentGame(ticTacToe2D);
+            saveCurrentGame(ticTacToe);
         }
     }
 
-    private void saveCurrentGame(TicTacToe2D ticTacToe2D) {
+    private void saveCurrentGame(TicTacToe ticTacToe) {
         try {
             FileWriter fileWriter = new FileWriter(PreGameProcessor.SAVED_GAME_FILE_PATH);
-            fileWriter.write(stringTTTConverter.convertTTTToString(ticTacToe2D));
+            fileWriter.write(ticTacToeRepresentationConverter.convertTTTToString(ticTacToe));
             fileWriter.close();
         }
         catch (IOException e){

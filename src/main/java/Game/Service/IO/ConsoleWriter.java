@@ -12,7 +12,7 @@ public class ConsoleWriter {
     public void startGame(GameBoard board){
         System.out.println("\nWelcome to Tic Tac Toe!\n");
         System.out.println("Here's the current board:\n");
-        board.printBoard();
+        System.out.println(board.toString());
     }
 
     public void prompt(Player player){
