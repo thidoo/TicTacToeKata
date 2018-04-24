@@ -4,7 +4,7 @@ import Game.Model.CustomException.CannotConvertToTicTacToeException;
 import Game.Model.TicTacToe;
 import Game.Service.IO.ConsoleWriter;
 import Game.Service.IO.InputReader;
-import Game.Service.Converter.TicTacToe2DRepresentationConverter;
+import Game.Service.Converter.TicTacToeRepresentationConverter;
 
 import java.io.*;
 
@@ -14,13 +14,13 @@ public class PreGameProcessor {
 
     private InputReader inputReader;
     private ConsoleWriter consoleWriter;
-    private TicTacToe2DRepresentationConverter ticTacToe2DRepresentationConverter;
+    private TicTacToeRepresentationConverter ticTacToeRepresentationConverter;
     private Configurator configurator;
 
-    public PreGameProcessor(InputReader inputReader, ConsoleWriter consoleWriter, TicTacToe2DRepresentationConverter ticTacToe2DRepresentationConverter, Configurator configurator) {
+    public PreGameProcessor(InputReader inputReader, ConsoleWriter consoleWriter, TicTacToeRepresentationConverter ticTacToeRepresentationConverter, Configurator configurator) {
         this.inputReader = inputReader;
         this.consoleWriter = consoleWriter;
-        this.ticTacToe2DRepresentationConverter = ticTacToe2DRepresentationConverter;
+        this.ticTacToeRepresentationConverter = ticTacToeRepresentationConverter;
         this.configurator = configurator;
     }
 
@@ -57,7 +57,7 @@ public class PreGameProcessor {
                 stringBuilder.append(line);
                 stringBuilder.append("\n");
             }
-            return ticTacToe2DRepresentationConverter.convertStringToTTT(stringBuilder.toString());
+            return ticTacToeRepresentationConverter.convertStringToTTT(stringBuilder.toString());
 
         } finally {
             bufferedReader.close();

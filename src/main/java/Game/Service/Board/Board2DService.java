@@ -28,7 +28,8 @@ public class Board2DService implements GameBoardService{
 
     private boolean hasFullRow(int boardSize, Cell[][] boardContent, int x, int y){
         for (int col = 0; col < boardSize; col++){
-            if (!(boardContent[x][col].getToken().equals(boardContent[x][y].getToken()))){
+            if ((boardContent[x][col].getToken().equals(Cell.getDefaultToken()))
+                    || (!boardContent[x][col].getToken().equals(boardContent[x][y].getToken()))){
                 return false;
             }
         }
@@ -37,7 +38,8 @@ public class Board2DService implements GameBoardService{
 
     private boolean hasFullColumn(int boardSize, Cell[][] boardContent, int x, int y){
         for (int row = 0; row < boardSize; row++){
-            if (!(boardContent[row][y].getToken().equals(boardContent[x][y].getToken()))){
+            if ((boardContent[row][y].getToken().equals(Cell.getDefaultToken()))
+                    ||(!boardContent[row][y].getToken().equals(boardContent[x][y].getToken()))){
                 return false;
             }
         }
@@ -55,7 +57,8 @@ public class Board2DService implements GameBoardService{
 
         int i = 0;
         while (i<boardSize){
-            if (!(boardContent[i][i].getToken().equals(boardContent[x][y].getToken()))){
+            if ((boardContent[i][i].getToken().equals(Cell.getDefaultToken()))
+                    || (!boardContent[i][i].getToken().equals(boardContent[x][y].getToken()))){
                 return false;
             }
             i++;
@@ -69,7 +72,8 @@ public class Board2DService implements GameBoardService{
         }
 
         for (int i=0; i < boardSize; i++){
-            if (!(boardContent[boardSize-1-i][i].getToken().equals(boardContent[x][y].getToken()))){
+            if ((boardContent[boardSize-1-i][i].getToken().equals(Cell.getDefaultToken())) ||
+                    (!boardContent[boardSize-1-i][i].getToken().equals(boardContent[x][y].getToken()))){
                 return false;
             }
         }

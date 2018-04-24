@@ -1,7 +1,10 @@
 import Game.GameEngine;
 import Game.Model.CustomException.CannotConvertToTicTacToeException;
 import Game.Service.Board.Board2DService;
-import Game.Service.Converter.TicTacToe2DRepresentationConverter;
+import Game.Service.Board.Board3DService;
+import Game.Service.Board.PlaneSplitter;
+import Game.Service.Converter.TicTacToeRepresentationConverter;
+import Game.Service.Coordinate.Coordinate3DConverter;
 import Game.Service.GameLoop.*;
 import Game.Service.IO.ConsoleWriter;
 import Game.Service.IO.InputReader;
@@ -17,19 +20,22 @@ public class Driver {
         InputReader inputReader = new InputReader();
         ConsoleWriter consoleWriter = new ConsoleWriter();
 
-        Coordinate2DConverter coordinate2DConverter = new Coordinate2DConverter();
         Board2DService board2DService = new Board2DService();
 
-        TicTacToe2DRepresentationConverter ticTacToe2DRepresentationConverter = new TicTacToe2DRepresentationConverter(board2DService);
+        PlaneSplitter planeSplitter = new PlaneSplitter();
+        Board3DService board3DService = new Board3DService(board2DService, planeSplitter);
+        Coordinate3DConverter coordinate3DConverter = new Coordinate3DConverter();
 
-        InputValidator inputValidator = new InputValidator(coordinate2DConverter);
+        TicTacToeRepresentationConverter ticTacToeRepresentationConverter = new TicTacToeRepresentationConverter(board3DService);
+
+        InputValidator inputValidator = new InputValidator(coordinate3DConverter);
         StateDecider stateDecider = new StateDecider();
-        InputProcessor inputProcessor = new InputProcessor(inputValidator, stateDecider, board2DService, coordinate2DConverter);
+        InputProcessor inputProcessor = new InputProcessor(inputValidator, stateDecider, board3DService, coordinate3DConverter);
 
         Configurator configurator = new Configurator(inputReader, consoleWriter);
-        PreGameProcessor preGameProcessor = new PreGameProcessor(inputReader, consoleWriter, ticTacToe2DRepresentationConverter, configurator);
+        PreGameProcessor preGameProcessor = new PreGameProcessor(inputReader, consoleWriter, ticTacToeRepresentationConverter, configurator);
         GameProcessor gameProcessor = new GameProcessor(inputReader, consoleWriter, inputProcessor);
-        PostGameProcessor postGameProcessor = new PostGameProcessor(inputReader, consoleWriter, ticTacToe2DRepresentationConverter);
+        PostGameProcessor postGameProcessor = new PostGameProcessor(inputReader, consoleWriter, ticTacToeRepresentationConverter);
 
         GameEngine gameEngine = new GameEngine(gameProcessor, preGameProcessor, postGameProcessor);
 

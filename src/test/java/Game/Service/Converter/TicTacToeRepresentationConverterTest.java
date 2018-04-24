@@ -12,13 +12,13 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class TicTacToe2DRepresentationConverterTest {
+public class TicTacToeRepresentationConverterTest {
 
-    private TicTacToe2DRepresentationConverter ticTacToe2DRepresentationConverter;
+    private TicTacToeRepresentationConverter ticTacToeRepresentationConverter;
 
     @Before
     public void setUp() throws Exception {
-        ticTacToe2DRepresentationConverter = new TicTacToe2DRepresentationConverter(new Board2DService());
+        ticTacToeRepresentationConverter = new TicTacToeRepresentationConverter(new Board2DService());
     }
 
     @Test
@@ -28,7 +28,7 @@ public class TicTacToe2DRepresentationConverterTest {
                 new Board2D(3));
 
         String expected = "X,O,X,. . . \n. . . \n. . . \n";
-        String actual = ticTacToe2DRepresentationConverter.convertTTTToString(ticTacToe);
+        String actual = ticTacToeRepresentationConverter.convertTTTToString(ticTacToe);
 
         assertThat(actual, equalTo(expected));
     }
@@ -38,7 +38,7 @@ public class TicTacToe2DRepresentationConverterTest {
         TicTacToe ticTacToe = createTicTacToe2DWithOneTokenPlaced();
 
         String expected = "X,O,X,X . . \n. . . \n. . . \n";
-        String actual = ticTacToe2DRepresentationConverter.convertTTTToString(ticTacToe);
+        String actual = ticTacToeRepresentationConverter.convertTTTToString(ticTacToe);
 
         assertThat(actual, equalTo(expected));
     }
@@ -47,7 +47,7 @@ public class TicTacToe2DRepresentationConverterTest {
     public void convertToStringToTTT() throws CannotConvertToTicTacToeException {
         String ticTacToe = "X,O,X,X . . \n. . . \n. . . \n";
         TicTacToe expected = createTicTacToe2DWithOneTokenPlaced();
-        TicTacToe actual = ticTacToe2DRepresentationConverter.convertStringToTTT(ticTacToe);
+        TicTacToe actual = ticTacToeRepresentationConverter.convertStringToTTT(ticTacToe);
 
         assertThat(actual.getCurrentPlayer().getToken(), equalTo(expected.getCurrentPlayer().getToken()));
         assertThat(actual.getBoard().toString(), equalTo(expected.getBoard().toString()));

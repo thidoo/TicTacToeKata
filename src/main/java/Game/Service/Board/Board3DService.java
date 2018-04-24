@@ -20,65 +20,104 @@ public class Board3DService implements GameBoardService {
 
     @Override
     public boolean checkForWinner(GameBoard board, Coordinate coordinate) {
-        Board2D[] XZPlanes = planeSplitter.splitXZ((Board3D)board);
-        Board2D[] YZPlanes = planeSplitter.splitYZ((Board3D)board);
-
-        return true;
+        return hasLineFilledOnXYPlane(board, coordinate) ||
+                hasLineFilledOnXZPlane(board, coordinate) ||
+                hasLineFilledOnYZPlane(board, coordinate) ||
+                hasDiagonalLineFilledAcrossPlanes(board);
     }
 
-    private boolean checkXYPlanes(GameBoard board, Coordinate coordinate){
+    private boolean hasLineFilledOnXYPlane(GameBoard board, Coordinate coordinate){
         Board2D[] XYPlanes = planeSplitter.splitXY((Board3D)board);
-        int x = ((Coordinate3D)coordinate).getX();
-        int y = ((Coordinate3D)coordinate).getY();
+        return board2DService.checkForWinner(XYPlanes[coordinate.getZ()],
+                new Coordinate2D(coordinate.getX(),coordinate.getY()));
+    }
 
-        boolean hasWinner = false;
+    private boolean hasLineFilledOnXZPlane(GameBoard board, Coordinate coordinate){
+        Board2D[] XZPlanes = planeSplitter.splitXZ((Board3D)board);
+        return board2DService.checkForWinner(XZPlanes[coordinate.getY()],
+                new Coordinate2D(coordinate.getX(), coordinate.getZ()));
+    }
+
+    private boolean hasLineFilledOnYZPlane(GameBoard board, Coordinate coordinate){
+        Board2D[] XZPlanes = planeSplitter.splitYZ((Board3D)board);
+        return board2DService.checkForWinner(XZPlanes[coordinate.getX()],
+                new Coordinate2D(coordinate.getZ(), coordinate.getY()));
+    }
+
+    private boolean hasDiagonalLineFilledAcrossPlanes(GameBoard board) {
+        return hasDiagonalLineFilledFromTopLeftCornerOfTopXYPlaneDown(((Board3D)board).getContent())
+                || hasDiagonalLineFilledFromTopRightCornerOfTopXYPlaneDown(((Board3D)board).getContent())
+                || hasDiagonalLineFilledFromBottomLeftCornerOfTopXYPlaneDown(((Board3D)board).getContent())
+                || hasDiagonalLineFilledFromBottomRightCornerOfTopXYPlaneDown(((Board3D)board).getContent());
+    }
+
+    private boolean hasDiagonalLineFilledFromTopLeftCornerOfTopXYPlaneDown(Cell[][][] boardContent){
+        int x = 0;
+        int y = 0;
+        int z = 0;
+
+        for (int i=0; i<boardContent.length-1; i++){
+            if ((boardContent[z][x][y].getToken().equals(Cell.getDefaultToken())
+                    || (!(boardContent[z+i][x+i][y+i].getToken()
+                    .equals(boardContent[z][x][y].getToken()))))){
+                return false;
+            }
+            x++; y++; z++;
+        }
+
         return true;
     }
 
-    //    @Override
-//    public boolean checkForWinner(GameBoard gameBoard, Coordinate coordinate) {
-//        Cell[][][] boardContent = ((Board3D)gameBoard).getContent();
-//        int boardSize = gameBoard.getSize();
-//
-//        int x = coordinate.getX();
-//        int y = coordinate.getY();
-//        int z = coordinate.getZ();
-//
-//        return hasLineFilledHorizontally(boardContent, boardSize, x, y, z)
-//                || hasLineFilledVertically_YDirection(boardContent, boardSize, x, y, z)
-//                || hasLineFilledVertically_ZDirection(boardContent, boardSize, x, y, z);
-//    }
-//
-//    private boolean hasLineFilledHorizontally(Cell[][][] boardContent, int size, int x, int y, int z){
-//        for (int i=0; i < size; i++){
-//            if (!boardContent[z][x][i].getToken().equals(boardContent[z][x][y].getToken())){
-//                return false;
-//            }
-//        }
-//        return true;
-//    }
-//
-//    private boolean hasLineFilledVertically_YDirection(Cell[][][] boardContent, int size, int x, int y, int z){
-//        for (int i=0; i < size; i++){
-//            if (!boardContent[z][i][y].getToken().equals(boardContent[z][x][y].getToken())){
-//                return false;
-//            }
-//        }
-//        return true;
-//    }
-//
-//    private boolean hasLineFilledVertically_ZDirection(Cell[][][] boardContent, int size, int x, int y, int z){
-//        for (int i=0; i < size; i++){
-//            if (!boardContent[i][x][y].getToken().equals(boardContent[z][x][y].getToken())){
-//                return false;
-//            }
-//        }
-//        return true;
-//    }
-//
-//    private boolean hasLineFilledDiagonally3D(Cell[][][] boardContent, int size, int x, int y, int z){
-//        return true;
-//    }
+    private boolean hasDiagonalLineFilledFromTopRightCornerOfTopXYPlaneDown(Cell[][][] boardContent){
+        int x = 0;
+        int y = boardContent.length-1;
+        int z = 0;
+
+        for (int i=0; i<boardContent.length-1; i++){
+            if ((boardContent[z][x][y].getToken().equals(Cell.getDefaultToken())
+                    || (!(boardContent[z+i][x+i][y-i].getToken()
+                    .equals(boardContent[z][x][y].getToken()))))){
+                return false;
+            }
+            x++; y--; z++;
+        }
+
+        return true;
+    }
+
+    private boolean hasDiagonalLineFilledFromBottomLeftCornerOfTopXYPlaneDown(Cell[][][] boardContent){
+        int x = boardContent.length-1;
+        int y = 0;
+        int z = 0;
+
+        for (int i=0; i<boardContent.length-1; i++){
+            if ((boardContent[z][x][y].getToken().equals(Cell.getDefaultToken())
+                    || (!(boardContent[z+i][x-i][y+i].getToken()
+                    .equals(boardContent[z][x][y].getToken()))))){
+                return false;
+            }
+            x--; y++; z++;
+        }
+
+        return true;
+    }
+
+    private boolean hasDiagonalLineFilledFromBottomRightCornerOfTopXYPlaneDown(Cell[][][] boardContent){
+        int x = boardContent.length-1;
+        int y = boardContent.length-1;
+        int z = 0;
+
+        for (int i=0; i<boardContent.length-1; i++){
+            if ((boardContent[z][x][y].getToken().equals(Cell.getDefaultToken())
+                    || (!(boardContent[z+i][x-i][y-i].getToken()
+                    .equals(boardContent[z][x][y].getToken()))))){
+                return false;
+            }
+            x--; y--; z++;
+        }
+
+        return true;
+    }
 
     @Override
     public GameBoard convertStringToBoard(String boardString) {

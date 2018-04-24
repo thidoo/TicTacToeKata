@@ -58,6 +58,26 @@ public class PlaneSplitter {
         return XZPlanes;
     }
 
+    private Board2D[] splitVerticalPlanes(Board3D board, int newX, int newY, int newZ){
+        int size = board.getSize();
+
+        Board2D[] planes = new Board2D[size];
+        for (int z = 0; z < size; z++){
+            planes[z] = new Board2D(size);
+
+            for (int x = 0; x < size; x++){
+                for (int y = 0; y < size; y++){
+                    String token = board.getContent()[newZ][newX][newY].getToken();
+                    if (!(token.equals(Cell.getDefaultToken()))){
+                        planes[z].updateCell(token, new Coordinate2D(x, y));
+                    }
+                }
+            }
+        }
+
+        return planes;
+    }
+
     private Board2D convert2DCellArrayToBoard2D(Cell[][] array){
         int size = array.length;
         Board2D board = new Board2D(size);

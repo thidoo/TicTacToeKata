@@ -15,6 +15,6 @@ public class Coordinate3DConverter implements CoordinateConverter {
         String[] xyz = input.split(DEFAULT_COORDINATE_DELIMITER);
         return new Coordinate3D(Integer.parseInt(xyz[0])-1,
                                 Integer.parseInt(xyz[1])-1,
-                                Integer.parseInt(xyz[1])-1);
+                                Integer.parseInt(xyz[2])-1);
     }
 }

@@ -1,20 +1,22 @@
 package Game.Service.Converter;
 
 import Game.Model.Board.Board2D;
+import Game.Model.Board.GameBoard;
 import Game.Model.CustomException.CannotConvertToTicTacToeException;
 import Game.Model.Player;
 import Game.Model.TicTacToe;
 import Game.Service.Board.Board2DService;
+import Game.Service.Board.GameBoardService;
 
 import java.util.StringJoiner;
 
-public class TicTacToe2DRepresentationConverter {
+public class TicTacToeRepresentationConverter {
 
     private final String DELIMITER = ",";
-    private Board2DService board2DService;
+    private GameBoardService boardService;
 
-    public TicTacToe2DRepresentationConverter(Board2DService board2DService) {
-        this.board2DService = board2DService;
+    public TicTacToeRepresentationConverter(GameBoardService boardService) {
+        this.boardService = boardService;
     }
 
     public String convertTTTToString(TicTacToe ticTacToe){
@@ -39,19 +41,19 @@ public class TicTacToe2DRepresentationConverter {
 
     }
 
-    private TicTacToe createTicTacToe(String player1Token, String player2Token, String currentPlayerToken, String board) throws CannotConvertToTicTacToeException {
+    private TicTacToe createTicTacToe(String player1Token, String player2Token, String currentPlayerToken, String boardString) throws CannotConvertToTicTacToeException {
 
-        Board2D board2D = (Board2D) board2DService.convertStringToBoard(board);
+        GameBoard board = boardService.convertStringToBoard(boardString);
 
         if (player1Token.equals(currentPlayerToken)){
             return new TicTacToe(new Player(1, player1Token),
                     new Player(2, player2Token),
-                    board2D);
+                    board);
         }
         else if (player2Token.equals(currentPlayerToken)){
             return new TicTacToe(new Player(1, player2Token),
                     new Player(2, player1Token),
-                    board2D);
+                    board);
         }
         else{
             throw new CannotConvertToTicTacToeException();
