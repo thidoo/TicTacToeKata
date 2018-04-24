@@ -12,10 +12,12 @@ public class Configurator {
 
     private ConsoleWriter consoleWriter;
     private InputReader inputReader;
+    private String gameVersion;
 
-    public Configurator(InputReader inputReader, ConsoleWriter consoleWriter) {
+    public Configurator(InputReader inputReader, ConsoleWriter consoleWriter, String gameVersion) {
         this.consoleWriter = consoleWriter;
         this.inputReader = inputReader;
+        this.gameVersion = gameVersion;
     }
 
     public TicTacToe configure(){
@@ -25,24 +27,21 @@ public class Configurator {
         consoleWriter.write("\nPlayer to go second, please enter a letter to represent your token: ");
         String player2Token = inputReader.read();
 
-        consoleWriter.write("\nWould you like to play the 2D or 3D version of TicTacToe?[2|3]");
-        String gameVersion = inputReader.read();
-
         consoleWriter.write("\nPlease enter a preferred board size: ");
         String boardSize = inputReader.read();
 
-        return createTicTacToe(player1Token, player2Token, gameVersion, boardSize);
+        return createTicTacToe(player1Token, player2Token, boardSize);
     }
 
-    private TicTacToe createTicTacToe(String p1, String p2, String gameVersion, String boardSize) {
+    private TicTacToe createTicTacToe(String p1, String p2, String boardSize) {
         Player player1 = new Player(1, p1);
         Player player2 = new Player(2, p2);
-        GameBoard gameBoard = createBoardOfCorrectDimension(gameVersion, boardSize);
+        GameBoard gameBoard = createBoardOfCorrectDimension(boardSize);
 
         return new TicTacToe(player1, player2, gameBoard);
     }
 
-    private GameBoard createBoardOfCorrectDimension(String gameVersion, String boardSize){
+    private GameBoard createBoardOfCorrectDimension(String boardSize){
         if (gameVersion.equals("2")){
             return new Board2D(Integer.parseInt(boardSize));
         }
