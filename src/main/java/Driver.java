@@ -10,7 +10,6 @@ import Game.Service.Coordinate.CoordinateConverter;
 import Game.Service.GameLoop.*;
 import Game.Service.IO.ConsoleWriter;
 import Game.Service.IO.InputReader;
-import Game.Service.*;
 import Game.Service.Coordinate.Coordinate2DConverter;
 
 import java.io.IOException;

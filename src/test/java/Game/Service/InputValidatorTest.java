@@ -2,7 +2,7 @@ package Game.Service;
 
 import Game.Model.Board.GameBoard;
 import Game.Model.Board.Board2D;
-import Game.Model.InputValidatorResult;
+import Game.Model.GameResult.InputValidatorResult;
 import Game.Service.Coordinate.Coordinate2DConverter;
 import Game.Service.GameLoop.InputValidator;
 import org.junit.Before;

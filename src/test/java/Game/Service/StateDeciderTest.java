@@ -4,10 +4,11 @@ import Game.Model.Board.GameBoard;
 import Game.Model.Board.Board2D;
 import Game.Model.Coordinate.Coordinate2D;
 import Game.Model.Player;
-import Game.Model.State.NotFinished;
-import Game.Model.State.GameState;
-import Game.Model.State.Win;
+import Game.Model.GameResult.State.NotFinished;
+import Game.Model.GameResult.State.GameState;
+import Game.Model.GameResult.State.Win;
 import Game.Service.Board.Board2DService;
+import Game.Service.GameLoop.StateDecider;
 import org.junit.Before;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package Game.Model;
+package Game.Model.GameResult;
 
 public enum InputValidatorResult {
     EXIT("\nYou've chosen to terminate this game.\n"),

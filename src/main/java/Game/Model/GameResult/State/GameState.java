@@ -1,4 +1,4 @@
-package Game.Model.State;
+package Game.Model.GameResult.State;
 
 public interface GameState {
 

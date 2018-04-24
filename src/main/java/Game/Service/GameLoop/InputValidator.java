@@ -2,8 +2,7 @@ package Game.Service.GameLoop;
 
 import Game.Model.Board.GameBoard;
 import Game.Model.Coordinate.Coordinate;
-import Game.Model.InputValidatorResult;
-import Game.Service.Coordinate.Coordinate2DConverter;
+import Game.Model.GameResult.InputValidatorResult;
 import Game.Service.Coordinate.CoordinateConverter;
 
 public class InputValidator {

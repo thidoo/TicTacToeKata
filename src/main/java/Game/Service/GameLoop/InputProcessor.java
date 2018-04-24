@@ -1,14 +1,13 @@
 package Game.Service.GameLoop;
 
 import Game.Model.Coordinate.Coordinate;
-import Game.Model.InputValidatorResult;
-import Game.Model.State.GameState;
-import Game.Model.State.NotFinished;
+import Game.Model.GameResult.InputValidatorResult;
+import Game.Model.GameResult.State.GameState;
+import Game.Model.GameResult.State.NotFinished;
 import Game.Model.TicTacToe;
 import Game.Model.TupleStructure.Pair;
 import Game.Service.Board.GameBoardService;
 import Game.Service.Coordinate.CoordinateConverter;
-import Game.Service.StateDecider;
 
 public class InputProcessor {
 

@@ -2,7 +2,7 @@ package Game.Service;
 
 import Game.Model.Board.Board2D;
 import Game.Model.Coordinate.Coordinate2D;
-import Game.Model.InputValidatorResult;
+import Game.Model.GameResult.InputValidatorResult;
 import Game.Model.TicTacToe;
 import Game.Model.TupleStructure.Pair;
 import Game.Model.Player;
@@ -10,6 +10,7 @@ import Game.Service.Board.Board2DService;
 import Game.Service.Coordinate.Coordinate2DConverter;
 import Game.Service.GameLoop.InputProcessor;
 import Game.Service.GameLoop.InputValidator;
+import Game.Service.GameLoop.StateDecider;
 import org.junit.Before;
 import org.junit.Test;
 
