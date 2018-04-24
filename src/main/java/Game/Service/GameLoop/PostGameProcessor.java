@@ -24,7 +24,7 @@ public class PostGameProcessor {
         consoleWriter.write("Would you like to save this game?[Y/N]\n");
         String response = inputReader.read().trim();
 
-        if (response.equals("Y") || response.equals("y")){
+        if (response.equalsIgnoreCase("Y")){
             saveCurrentGame(ticTacToe);
         }
     }

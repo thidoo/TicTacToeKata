@@ -2,7 +2,7 @@ package Game.Service.GameLoop;
 
 import org.junit.Test;
 
-public class PostGameEngineProcessorTest {
+public class PostGameProcessorTest {
 
     @Test
     public void shouldSaveGame_ifRequestedTest(){

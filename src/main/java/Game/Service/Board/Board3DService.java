@@ -28,20 +28,17 @@ public class Board3DService implements GameBoardService {
 
     private boolean hasLineFilledOnXYPlane(GameBoard board, Coordinate coordinate){
         Board2D[] XYPlanes = planeSplitter.splitXY((Board3D)board);
-        return board2DService.checkForWinner(XYPlanes[coordinate.getZ()],
-                new Coordinate2D(coordinate.getX(),coordinate.getY()));
+        return board2DService.checkForWinner(XYPlanes[coordinate.getZ()], new Coordinate2D(coordinate.getX(),coordinate.getY()));
     }
 
     private boolean hasLineFilledOnXZPlane(GameBoard board, Coordinate coordinate){
         Board2D[] XZPlanes = planeSplitter.splitXZ((Board3D)board);
-        return board2DService.checkForWinner(XZPlanes[coordinate.getY()],
-                new Coordinate2D(coordinate.getX(), coordinate.getZ()));
+        return board2DService.checkForWinner(XZPlanes[coordinate.getY()], new Coordinate2D(coordinate.getX(), coordinate.getZ()));
     }
 
     private boolean hasLineFilledOnYZPlane(GameBoard board, Coordinate coordinate){
         Board2D[] XZPlanes = planeSplitter.splitYZ((Board3D)board);
-        return board2DService.checkForWinner(XZPlanes[coordinate.getX()],
-                new Coordinate2D(coordinate.getZ(), coordinate.getY()));
+        return board2DService.checkForWinner(XZPlanes[coordinate.getX()], new Coordinate2D(coordinate.getZ(), coordinate.getY()));
     }
 
     private boolean hasDiagonalLineFilledAcrossPlanes(GameBoard board) {

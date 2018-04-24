@@ -8,7 +8,7 @@ import Game.Service.GameLoop.PreGameProcessor;
 
 import java.io.IOException;
 
-public class GameEngine {
+public class Game {
 
     private boolean isLoop;
 
@@ -16,7 +16,7 @@ public class GameEngine {
     private PreGameProcessor preGameProcessor;
     private PostGameProcessor postGameProcessor;
 
-    public GameEngine(GameProcessor gameProcessor, PreGameProcessor preGameProcessor, PostGameProcessor postGameProcessor) {
+    public Game(GameProcessor gameProcessor, PreGameProcessor preGameProcessor, PostGameProcessor postGameProcessor) {
         this.gameProcessor = gameProcessor;
         this.preGameProcessor = preGameProcessor;
         this.postGameProcessor = postGameProcessor;

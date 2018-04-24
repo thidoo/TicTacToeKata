@@ -26,43 +26,33 @@ public class PreGameProcessor {
 
     public TicTacToe process() throws CannotConvertToTicTacToeException, IOException {
         File file = new File(SAVED_GAME_FILE_PATH);
-        TicTacToe ticTacToe;
 
-        if (file.exists()){
+        if (file.exists()) {
             consoleWriter.write("Would you like to load from the previous game?[Y/N]");
             String response = inputReader.read();
 
-            if (response.equals("Y") || response.equals("y")){
-                ticTacToe = convertTextToTicTacToe(SAVED_GAME_FILE_PATH);
+            if (response.equals("Y") || response.equals("y")) {
+                TicTacToe ticTacToe = convertTextToTicTacToe();
                 file.delete();
+                return ticTacToe;
             }
-            else {
-                ticTacToe = configurator.configure();
-            }
-        }
-        else {
-            ticTacToe = configurator.configure();
         }
 
-        return ticTacToe;
+        return configurator.configure();
     }
 
-    private TicTacToe convertTextToTicTacToe(String filePath) throws IOException, CannotConvertToTicTacToeException {
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath));
+    private TicTacToe convertTextToTicTacToe() throws IOException, CannotConvertToTicTacToeException {
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(SAVED_GAME_FILE_PATH));
         StringBuilder stringBuilder = new StringBuilder();
         String line;
 
-        try {
-            while((line = bufferedReader.readLine()) != null) {
-                stringBuilder.append(line);
-                stringBuilder.append("\n");
-            }
-            return ticTacToeRepresentationConverter.convertStringToTTT(stringBuilder.toString());
 
-        } finally {
-            bufferedReader.close();
+        while((line = bufferedReader.readLine()) != null) {
+            stringBuilder.append(line);
+            stringBuilder.append("\n");
         }
+        bufferedReader.close();
+
+        return ticTacToeRepresentationConverter.convertStringToTTT(stringBuilder.toString());
     }
-
-
 }
